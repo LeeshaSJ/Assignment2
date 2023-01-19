@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Student";
+}
+<link rel="stylesheet" href="~/css/student.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="~/js/student.js"></script>
+<div id="std-info">
+    <p class="std-info-label">Student name: <span class="std-info-value" id="std-name"></span></p>
+    <p class="std-info-label">Student ID: <span class="std-info-value" id="std-id"></span></p>
+    <p class="std-info-label">Course: <span class="std-info-value" id="std-course"></span></p>
+    <p class="std-info-label">Enrolled modules: <span class="std-info-value" id=""></span></p>
+</div>
+<div id="content">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-unit">
+            Select Unit
+        </button>
+        <ul class="dropdown-menu">
+            <li id="unit-selector-1"><a class="dropdown-item">Applied Project</a></li>
+            <li><a class="dropdown-item">Advance Web Development</a></li>
+            <li><a class="dropdown-item">Online Business System Development</a></li>
+            <li><a class="dropdown-item">ICT Business Analytics and Data Visualization</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-category">
+            Select Category
+        </button>
+        <ul class="dropdown-menu">
+            <li id="dropdown-books"><a class="dropdown-item">Books</a></li>
+            <li id="dropdown-devices"><a class="dropdown-item">Devices</a></li>
+        </ul>
+    </div>
+    <div id="books" class="tab-content">
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">ASP.NET Book</p>
+                <p class="element-description">The complete reference to ASP.NET...</p>
+                <button class="btn-request">Request</button>
+            </div>
+        </div>
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">ASP.NET Book</p>
+                <p class="element-description">The complete reference to ASP.NET...</p>
+                <button class="btn-request">Request</button>
+            </div>
+        </div>
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">ASP.NET Book</p>
+                <p class="element-description">The complete reference to ASP.NET...</p>
+                <button class="btn-request">Request</button>
+            </div>
+        </div>
+    </div>
+    <div id="devices" class="tab-content">
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">High performance laptop</p>
+                <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
+                <button class="btn-request">Request</button>
+            </div>
+        </div>
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">High performance laptop</p>
+                <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
+                <button class="btn-request">Request</button>
+            </div>
+        </div>
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">High performance laptop</p>
+                <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
+                <button class="btn-request">Request</button>
+            </div>
+        </div>
+    </div>
+</div>

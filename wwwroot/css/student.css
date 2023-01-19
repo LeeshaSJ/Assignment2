@@ -1,0 +1,52 @@
+﻿#std-info {
+    border-top: #ccc 5px solid;
+    border-right: #ccc 5px solid;
+    border-bottom: #777 5px solid;
+    border-left: #777 5px solid;
+    border-radius: 50px;
+    padding: 30px 50px 30px 50px;
+    margin-bottom: 20px;
+}
+.std-info-label {
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.content-element {
+    border: groove;
+    border-radius: 5px;
+    margin: 5px 0px 5px 0px;
+    height: 250px;
+    padding: 2px;
+}
+
+.element-image {
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+
+.element-text {
+    float: left;
+    margin-left: 20px;
+    height: 100%;
+    width: 70%;
+    border-left: groove;
+}
+
+.element-request-msg {
+    background-color: red;
+}
+
+#btn-dropdown{
+    width: 34%;
+}
+
+#testp {
+    font-size: 12px;
+}
+.dropdown{
+    width:50%;
+    float:left;
+}

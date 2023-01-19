@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewData["Title"] = "Staff";
+}
+
+<link rel="stylesheet" href="~/css/staff.css" />
+
+<div id="stf-info">
+    <p class="stf-info-label">User name: <span class="stf-info-value" id="stf-name"></span></p>
+    <p class="stf-info-label">User ID: <span class="stf-info-value" id="stf-id"></span></p>
+    <p class="stf-info-label">Department: <span class="stf-info-value" id="stf-dept"></span></p>
+</div>
+
+<div id="content">
+    <button class="tablink" onclick="openPage('requested-page', this, 'red')">Student Requests</button>
+    <button class="tablink" onclick="openPage('resources-page', this, 'green')" id="defaultOpen">Available Resources</button>
+
+    <div id="requested-page" class="tabcontent">
+        <p>Requested content appears here</p>
+
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">ASP.NET Book</p>
+                <p class="element-description">The complete reference to ASP.NET...</p>
+                <p class="element-request-msg">Requested by: <span id="req-std-id"></span></p>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text">
+                <p class="element-name">High performance laptop</p>
+                <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
+                <p class="element-request-msg" style="background-color: green;">Granted to: <span id="req-std-id"></span></p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="resources-page" class="tabcontent">
+        <p>Resources appear here</p>
+
+        <button class="accordion">Books</button>
+        <div class="panel">
+            <div class="content-element">
+                <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+                <div class="element-text">
+                    <p class="element-name">ASP.NET Book</p>
+                    <p class="element-description">The complete reference to ASP.NET...</p>
+                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
+                </div>
+            </div>
+            <div class="content-element">
+                <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+                <div class="element-text">
+                    <p class="element-name">ASP.NET Book</p>
+                    <p class="element-description">The complete reference to ASP.NET...</p>
+                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
+                </div>
+            </div>
+            <div class="content-element">
+                <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+                <div class="element-text">
+                    <p class="element-name">ASP.NET Book</p>
+                    <p class="element-description">The complete reference to ASP.NET...</p>
+                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <button class="accordion">Devices</button>
+        <div class="panel">
+            <div class="content-element">
+                <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
+                <div class="element-text">
+                    <p class="element-name">High performance laptop</p>
+                    <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
+                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
+                </div>
+            </div>
+            <div class="content-element">
+                <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
+                <div class="element-text">
+                    <p class="element-name">High performance laptop</p>
+                    <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
+                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
+                </div>
+            </div>
+            <div class="content-element">
+                <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
+                <div class="element-text">
+                    <p class="element-name">High performance laptop</p>
+                    <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
+                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
