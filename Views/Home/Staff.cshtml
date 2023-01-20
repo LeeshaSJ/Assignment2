@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Staff";
 }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <link rel="stylesheet" href="~/css/staff.css" />
 
@@ -12,7 +14,7 @@
 </div>
 
 <div id="content">
-    <button class="tablink" onclick="openPage('requested-page', this, 'red')">Student Requests</button>
+    <button class="tablink" onclick="openPage('requested-page', this, 'red')" id="defaultOpen1">Student Requests</button>
     <button class="tablink" onclick="openPage('resources-page', this, 'green')" id="defaultOpen">Available Resources</button>
 
     <div id="requested-page" class="tabcontent">
