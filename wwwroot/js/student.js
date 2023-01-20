@@ -1,11 +1,4 @@
 ﻿$(function () {
-    $(".applied-project").hide();
-    $(".advance-web-dev").hide();
-    $(".online-business-sys").hide();
-    $(".ict-bus-analytics").hide();
-    $("#books").hide();
-    $("#devices").hide();
-
     $("#selector-1").click(function () {
         $(".applied-project").show();
         $(".advance-web-dev").hide();

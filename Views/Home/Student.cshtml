@@ -10,98 +10,164 @@
     <p class="std-info-label">Course: <span class="std-info-value" id="std-course"></span></p>
 </div>
 <div id="content">
-    <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-unit">
-        Select Unit 
-        </button>
-        <ul class="dropdown-menu">
-            <li id="selector-1"><a class="dropdown-item">Applied Project</a></li>
-            <li id="selector-2"><a class="dropdown-item">Advance Web Development</a></li>
-            <li id="selector-3"><a class="dropdown-item">Online Business System Development</a></li>
-            <li id="selector-4"><a class="dropdown-item">ICT Business Analytics and Data Visualization</a></li>
-        </ul>
+    <div class="clearfix">
+        <div class="dropdown">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-unit">
+                Select Unit
+            </button>
+            <ul class="dropdown-menu">
+                <li id="selector-1"><a class="dropdown-item">Applied Project</a></li>
+                <li id="selector-2"><a class="dropdown-item">Advance Web Development</a></li>
+                <li id="selector-3"><a class="dropdown-item">Online Business System Development</a></li>
+                <li id="selector-4"><a class="dropdown-item">ICT Business Analytics and Data Visualization</a></li>
+            </ul>
+        </div>
+        <div class="dropdown" id="dd-cat">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-category">
+                Select Category
+            </button>
+            <ul class="dropdown-menu">
+                <li id="dropdown-books"><a class="dropdown-item">Books</a></li>
+                <li id="dropdown-devices"><a class="dropdown-item">Devices</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-category">
-        Select Category 
-        </button>
-        <ul class="dropdown-menu">
-            <li id="dropdown-books"><a class="dropdown-item">Books</a></li>
-            <li id="dropdown-devices"><a class="dropdown-item">Devices</a></li>
-        </ul>
-    </div>
-    <div id="books" class="tab-content">
-        <div class="content-element applied-project">
-            <div class="element-image"><img src="~/images/python.jpg" alt="requested resource image"/></div>
-            <div class="element-text">
+    
+    <div id="books" class="tab-content container">
+        <!---------------------------------------------->
+        <div class="content-element applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/python.jpg" alt="requested resource image"/></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">Python Programming for Beginners</p>
-                <p class="element-description">The complete reference to python programming.</p>
-                <button class="btn-request">Request</button>
+                <p class="element-description">The complete reference to python programming.</p>      
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
-        <div class="content-element advance-web-dev,applied-project">
-            <div class="element-image"><img src="~/images/eBusiness.jpg" alt="requested resource image"/></div>
-            <div class="element-text">
+        <!---------------------------------------------->
+        <div class="content-element advance-web-dev applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/eBusiness.jpg" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">Information Systems & E-Business</p>
                 <p class="element-description">The complete reference to information systems & E-Business.</p>
-                <button class="btn-request">Request</button>
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
-        <div class="content-element online-business-sys,applied-project">
-            <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image"/></div>
-            <div class="element-text">
+        <!---------------------------------------------->
+        <div class="content-element online-business-sys applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/reference_1.jpg" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">ASP.NET Book</p>
                 <p class="element-description">The complete reference to ASP.NET..</p>
-                <button class="btn-request">Request</button>
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
-        <div class="content-element ict-bus-analytics">
-            <div class="element-image"><img src="~/images/Data_V1.png" alt="requested resource image"/></div>
-            <div class="element-text">
+        <!---------------------------------------------->
+        <div class="content-element ict-bus-analytics row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/Data_V1.png" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">Fundamentals of Data Visualization</p>
                 <p class="element-description">The complete reference to data visualization...</p>
-                <button class="btn-request">Request</button>
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
+
     </div>
 
 
 
-    <div id="devices" class="tab-content">
-        <div class="content-element applied-project">
-            <div class="element-image"><img src="~/images/Apple1.jpg" alt="requested resource image" height="30%"/></div>
-            <div class="element-text">
+    <div id="devices" class="tab-content container">
+        <!---------------------------------------------->
+        <div class="content-element applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/Apple1.jpg" alt="requested resource image" height="30%" /></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">High performance Computer</p>
                 <p class="element-description">macOS Monterey (version 12.2.1) - 8-core...</p>
-                <button class="btn-request">Request</button>
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
-
-        <div class="content-element online-business-sys">
-            <div class="element-image"><img src="~/images/hp2.png" alt="requested resource image"/></div>
-            <div class="element-text">
+        <!---------------------------------------------->
+        <div class="content-element online-business-sys row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/hp2.png" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">High performance laptop</p>
                 <p class="element-description">HP Intel i5 11th Gen 15s...</p>
-                <button class="btn-request">Request</button>
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
-         <div class="content-element ict-bus-analytics">
-            <div class="element-image"><img src="~/images/hp1-1.png" alt="requested resource image"/></div>
-            <div class="element-text">
+        <!---------------------------------------------->
+        <div class="content-element ict-bus-analytics row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/hp1-1.png" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">High performance laptop</p>
                 <p class="element-description">HP Intel i3 11th Gen 15s...</p>
-                <button class="btn-request">Request</button>
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
-         <div class="content-element ict-bus-analytics,applied-project">
-            <div class="element-image"><img src="~/images/Apple5.jpg" alt="requested resource image"/></div>
-            <div class="element-text">
+        <!---------------------------------------------->
+        <div class="content-element ict-bus-analytics applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/Apple5.jpg" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
                 <p class="element-name">High performance laptop</p>
                 <p class="element-description">HP Intel i3 11th Gen 15s...</p>
-                <button class="btn-request">Request</button>
+            </div>
+            <!--button-->
+            <div class="element-button col">
+                <div class="centerbox">
+                    <button class="btn-request">Request</button>
+                </div>
             </div>
         </div>
-
 
     </div>
 </div>
