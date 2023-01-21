@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HVB51+4isEj80POxDwdOU+8tNFbFrXxlBAFz8UtW31k=",
+  "Hash": "f/D8Zf84vSM++iMoaLQvJbIqsz7bJH/3M+NDNQXwV4U=",
   "Source": "Assignment2",
   "BasePath": "_content/Assignment2",
   "Mode": "Default",
@@ -474,6 +474,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\vu_transparent_logo.png"
+    },
+    {
+      "Identity": "E:\\MK\\Programming\\Visual Studio Projects\\Assignment2-new\\wwwroot\\js\\login.js",
+      "SourceId": "Assignment2",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\MK\\Programming\\Visual Studio Projects\\Assignment2-new\\wwwroot\\",
+      "BasePath": "_content/Assignment2",
+      "RelativePath": "js/login.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
       "Identity": "E:\\MK\\Programming\\Visual Studio Projects\\Assignment2-new\\wwwroot\\js\\site.js",
