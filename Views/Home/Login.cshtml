@@ -4,17 +4,17 @@
 }
 
 <link rel="stylesheet" href="~/css/login.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="~/js/login.js"></script>
 
-
-<form action="action_page.php" method="post">
-
+<form>
     <img src="~/images/vu_transparent_logo.png" width="100%"/>
 
     <div class="mb-3">
         <input type="text" class="form-control" id="sid" placeholder="Student/Staff ID">
     </div>
     <div class="mb-3">
-        <input type="password" class="form-control" id="password" placeholder="Password">
+        <input type="password" class="form-control" id="pass" placeholder="Password">
     </div>
 
     <div class="mb-3">
@@ -24,6 +24,7 @@
         </center>
     </div>
 
-    <button type="submit" class="btn btn-primary">Login</button>
-        
+    <button type="submit" class="btn btn-primary" id="btn-submit">Login</button>
+
+    <p id="login-message"></p>     
 </form>

@@ -1,102 +1,124 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Staff";
 }
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+<link rel="stylesheet" href="~/css/student.css" />
 <link rel="stylesheet" href="~/css/staff.css" />
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="~/js/student.js"></script>
 <div id="stf-info">
-    <p class="stf-info-label">User name: <span class="stf-info-value" id="stf-name"></span></p>
-    <p class="stf-info-label">User ID: <span class="stf-info-value" id="stf-id"></span></p>
+    <p class="stf-info-label">Staff user name: <span class="stf-info-value" id="stf-name"></span></p>
+    <p class="stf-info-label">Staff user ID: <span class="stf-info-value" id="stf-id"></span></p>
     <p class="stf-info-label">Department: <span class="stf-info-value" id="stf-dept"></span></p>
 </div>
-
 <div id="content">
-    <button class="tablink" onclick="openPage('requested-page', this, 'red')" id="defaultOpen1">Student Requests</button>
-    <button class="tablink" onclick="openPage('resources-page', this, 'green')" id="defaultOpen">Available Resources</button>
+    <div class="clearfix">
+        <div class="dropdown">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-unit">
+                Select Unit
+            </button>
+            <ul class="dropdown-menu">
+                <li id="selector-1"><a class="dropdown-item">Applied Project</a></li>
+                <li id="selector-2"><a class="dropdown-item">Advance Web Development</a></li>
+                <li id="selector-3"><a class="dropdown-item">Online Business System Development</a></li>
+                <li id="selector-4"><a class="dropdown-item">ICT Business Analytics and Data Visualization</a></li>
+            </ul>
+        </div>
+        <div class="dropdown" id="dd-cat">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-category">
+                Select Category
+            </button>
+            <ul class="dropdown-menu">
+                <li id="dropdown-books"><a class="dropdown-item">Books</a></li>
+                <li id="dropdown-devices"><a class="dropdown-item">Devices</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <div id="requested-page" class="tabcontent">
-        <p>Requested content appears here</p>
-
-        <div class="content-element">
-            <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
-            <div class="element-text">
-                <p class="element-name">ASP.NET Book</p>
-                <p class="element-description">The complete reference to ASP.NET...</p>
-                <p class="element-request-msg">Requested by: <span id="req-std-id"></span></p>
+    <div id="books" class="tab-content container">
+        <!---------------------------------------------->
+        <div class="content-element applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/python.jpg" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">Python Programming for Beginners</p>
+                <p class="element-description">The complete reference to python programming.</p>
             </div>
         </div>
-
-        <div class="content-element">
-            <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
-            <div class="element-text">
-                <p class="element-name">High performance laptop</p>
-                <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
-                <p class="element-request-msg" style="background-color: green;">Granted to: <span id="req-std-id"></span></p>
+        <!---------------------------------------------->
+        <div class="content-element advance-web-dev applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/eBusiness.jpg" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">Information Systems & E-Business</p>
+                <p class="element-description">The complete reference to information systems & E-Business.</p>
+            </div>
+        </div>
+        <!---------------------------------------------->
+        <div class="content-element online-business-sys applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/reference_1.jpg" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">ASP.NET Book</p>
+                <p class="element-description">The complete reference to ASP.NET..</p>
+            </div>
+        </div>
+        <!---------------------------------------------->
+        <div class="content-element ict-bus-analytics row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/Data_V1.png" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">Fundamentals of Data Visualization</p>
+                <p class="element-description">The complete reference to data visualization...</p>
             </div>
         </div>
 
     </div>
 
 
-    <div id="resources-page" class="tabcontent">
-        <p>Resources appear here</p>
 
-        <button class="accordion">Books</button>
-        <div class="panel">
-            <div class="content-element">
-                <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
-                <div class="element-text">
-                    <p class="element-name">ASP.NET Book</p>
-                    <p class="element-description">The complete reference to ASP.NET...</p>
-                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
-                </div>
-            </div>
-            <div class="content-element">
-                <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
-                <div class="element-text">
-                    <p class="element-name">ASP.NET Book</p>
-                    <p class="element-description">The complete reference to ASP.NET...</p>
-                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
-                </div>
-            </div>
-            <div class="content-element">
-                <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
-                <div class="element-text">
-                    <p class="element-name">ASP.NET Book</p>
-                    <p class="element-description">The complete reference to ASP.NET...</p>
-                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
-                </div>
+    <div id="devices" class="tab-content container">
+        <!---------------------------------------------->
+        <div class="content-element applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/Apple1.jpg" alt="requested resource image" height="30%" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">High performance Computer</p>
+                <p class="element-description">macOS Monterey (version 12.2.1) - 8-core...</p>
             </div>
         </div>
-
-        <button class="accordion">Devices</button>
-        <div class="panel">
-            <div class="content-element">
-                <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
-                <div class="element-text">
-                    <p class="element-name">High performance laptop</p>
-                    <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
-                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
-                </div>
+        <!---------------------------------------------->
+        <div class="content-element online-business-sys row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/hp2.png" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">High performance laptop</p>
+                <p class="element-description">HP Intel i5 11th Gen 15s...</p>
             </div>
-            <div class="content-element">
-                <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
-                <div class="element-text">
-                    <p class="element-name">High performance laptop</p>
-                    <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
-                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
-                </div>
+        </div>
+        <!---------------------------------------------->
+        <div class="content-element ict-bus-analytics row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/hp1-1.png" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">High performance laptop</p>
+                <p class="element-description">HP Intel i3 11th Gen 15s...</p>
             </div>
-            <div class="content-element">
-                <div class="element-image"><img src="~/images/reference_2.jpg" alt="requested resource image" height="100%" /></div>
-                <div class="element-text">
-                    <p class="element-name">High performance laptop</p>
-                    <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
-                    <p class="element-availability">Available amount: <span id="available-amt"></span></p>
-                </div>
+        </div>
+        <!---------------------------------------------->
+        <div class="content-element ict-bus-analytics applied-project row">
+            <!--image-->
+            <div class="element-image col"><img src="~/images/Apple5.jpg" alt="requested resource image" /></div>
+            <!--text-->
+            <div class="element-text col">
+                <p class="element-name">High performance laptop</p>
+                <p class="element-description">HP Intel i3 11th Gen 15s...</p>
             </div>
         </div>
 
