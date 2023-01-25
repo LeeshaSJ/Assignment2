@@ -2,3 +2,8 @@
     background-image: url("../images/vu_login_back.jpg");
     background-size: cover;
 }
+
+#login {
+    background-color: aqua;
+    border-radius: 25px;
+}

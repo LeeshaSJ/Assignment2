@@ -57,3 +57,13 @@
     color: white;
 }
 
+#staff {
+    background-color: darkslategrey;
+    border-radius: 25px;
+}
+
+#student{
+    background-color:white;
+
+}
+
