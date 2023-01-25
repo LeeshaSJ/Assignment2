@@ -1,14 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Staff";
 }
-<link rel="stylesheet" href="~/css/student.css" />
-<link rel="stylesheet" href="~/css/staff.css" />
+<link rel="stylesheet" href="~/css/student_staff.css" />
+<style>
+    #staff {
+        background-color: lightskyblue;
+        border-radius: 25px;
+    }
+</style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="~/js/student.js"></script>
-<div id="stf-info">
-    <p class="stf-info-label">Staff user name: <span class="stf-info-value" id="stf-name"></span></p>
-    <p class="stf-info-label">Staff user ID: <span class="stf-info-value" id="stf-id"></span></p>
-    <p class="stf-info-label">Department: <span class="stf-info-value" id="stf-dept"></span></p>
+<div id="user-info">
+    <p class="user-info-label">Staff user name: <span class="user-info-value" id="user-name">Dr. Rasika Ranaweera</span></p>
+    <p class="user-info-label">Staff user ID: <span class="user-info-value" id="user-id">l3566194</span></p>
+    <p class="user-info-label">Department: <span class="user-info-value" id="user-dept">Department of Information & System Science</span></p>
 </div>
 <div id="content">
     <div class="clearfix">
@@ -34,7 +40,7 @@
         </div>
     </div>
 
-    <div id="books" class="tab-content container">
+    <div id="books" class="container">
         <!---------------------------------------------->
         <div class="content-element applied-project row">
             <!--image-->

@@ -4,6 +4,10 @@
 }
 
 #login {
-    background-color: aqua;
+    background-color: lightskyblue;
     border-radius: 25px;
+}
+
+#btn-submit {
+    width: 100%;
 }

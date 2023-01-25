@@ -3,60 +3,46 @@
     ViewData["Title"] = "StudentRequests";
 }
 
-<link rel="stylesheet" href="~/css/student.css" />
+<link rel="stylesheet" href="~/css/student_staff.css" />
 <style>
     #stdRequest {
-        background-color:lightpink;
+        background-color: lightskyblue;
         border-radius: 25px;
     }
-    #student{
-    background-color:white;
-
-    }
-
-    .accept {
-        width:100%;
-    }
-    
-    .decline {
-        width:100%;
-    }
-
 </style>
 
-<div id="requested-page">
-    <div class="content-element">
-        <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
-        <div class="element-text">
-            <p class="element-name">ASP.NET Book</p>
-            <p class="element-description">The complete reference to ASP.NET...</p>
-            <p class="element-requested-by">Requested by: </p>
-            <button class="accept">Accept</button>
-            <button class="decline">Decline</button>
+<div id="content">
+    <div class="tab-content container">
+        <div class="content-element row">
+            <div class="element-image col"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text col">
+                <p class="element-name">ASP.NET Book</p>
+                <p class="element-description">The complete reference to ASP.NET...</p>
+                <p class="element-requested-by">Requested by: </p>
+                <button class="accept">Accept</button>
+                <button class="decline">Decline</button>
+            </div>
+        </div>
+
+        <div class="content-element row">
+            <div class="element-image col"><img src="~/images/eBusiness.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text col">
+                <p class="element-name">Information Systems & E-Business</p>
+                <p class="element-description">The complete reference to information systems & E-Business...</p>
+                <p class="element-requested-by">Requested by: </p>
+                <button class="accept">Accept</button>
+                <button class="decline">Decline</button>
+            </div>
+        </div>
+        <div class="content-element row">
+            <div class="element-image col"><img src="~/images/Apple1.jpg" alt="requested resource image" height="100%" /></div>
+            <div class="element-text col">
+                <p class="element-name">High performance Computer</p>
+                <p class="element-description">macOS Monterey (version 12.2.1) - 8-core...</p>
+                <p class="element-requested-by">Requested by: </p>
+                <button class="accept">Accepted</button>
+                <button class="decline">Decline</button>
+            </div>
         </div>
     </div>
-
-    <div class="content-element">
-        <div class="element-image"><img src="~/images/eBusiness.jpg" alt="requested resource image" height="100%" /></div>
-        <div class="element-text">
-            <p class="element-name">Information Systems & E-Business</p>
-            <p class="element-description">The complete reference to information systems & E-Business...</p>
-            <p class="element-requested-by">Requested by: </p>
-            <button class="accept">Accept</button>
-            <button class="decline">Decline</button>
-        </div>
-    </div>
-    <div class="content-element">
-        <div class="element-image"><img src="~/images/Apple1.jpg" alt="requested resource image" height="100%" /></div>
-        <div class="element-text">
-            <p class="element-name">High performance Computer</p>
-            <p class="element-description">macOS Monterey (version 12.2.1) - 8-core...</p>
-            <p class="element-requested-by">Requested by: </p>
-            <button class="accept">Accepted</button>
-            <button class="decline">Decline</button>
-        </div>
-    </div>
-</div>
-
-
-    
+</div>    

@@ -1,13 +1,19 @@
 ﻿@{
     ViewData["Title"] = "Student";
 }
-<link rel="stylesheet" href="~/css/student.css" />
+<link rel="stylesheet" href="~/css/student_staff.css" />
+<style>
+    #student {
+        background-color: lightskyblue;
+        border-radius: 25px;
+    }
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="~/js/student.js"></script>
-<div id="std-info">
-    <p class="std-info-label">Student name: <span class="std-info-value" id="std-name"></span></p>
-    <p class="std-info-label">Student ID: <span class="std-info-value" id="std-id"></span></p>
-    <p class="std-info-label">Course: <span class="std-info-value" id="std-course"></span></p>
+<div id="user-info">
+    <p class="user-info-label">Student name: <span class="user-info-value" id="user-name">Ms. Leesha Jayasekara</span></p>
+    <p class="user-info-label">Student ID: <span class="user-info-value" id="user-id">s4662585</span></p>
+    <p class="user-info-label">Course: <span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
 </div>
 <div id="content">
     <div class="clearfix">
@@ -33,7 +39,7 @@
         </div>
     </div>
     
-    <div id="books" class="tab-content container">
+    <div id="books" class="container">
         <!---------------------------------------------->
         <div class="content-element applied-project row">
             <!--image-->
@@ -98,9 +104,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 
 
     <div id="devices" class="tab-content container">
@@ -168,6 +172,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

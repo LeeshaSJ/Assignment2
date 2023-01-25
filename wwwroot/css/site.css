@@ -32,43 +32,9 @@ form {
     transform: translate(-50%, -50%);
 }
 
-button {
-    width: 100%;
-}
 
 #content {
     font-family: Arial;
-}
-
-.tablink {
-    border-top: #ccc 5px solid;
-    border-right: #ccc 5px solid;
-    border-bottom: #777 5px solid;
-    border-left: #777 5px solid;
-    border-radius: 50px;
-    background-color: #555;
-    color: black;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 50%;
-}
-
-.tablink:hover {
-    background-color: #777;
-}
-
-.tabcontent {
-    color: black;
-    display: none;
-    border-top: #ccc 5px solid;
-    border-right: #ccc 5px solid;
-    border-bottom: #777 5px solid;
-    border-left: #777 5px solid;
-    border-radius: 50px;
 }
 
 .clearfix::after {
