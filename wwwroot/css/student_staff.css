@@ -1,4 +1,5 @@
-﻿@media (max-width: 768px) {
+﻿/*media queries change css dynamically when the window size changes*/
+@media (max-width: 768px) {
     .element-image {
         height: 100%;
         width: 180vw;

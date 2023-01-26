@@ -1,26 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Student";
 }
+<!--CSS links-->
 <link rel="stylesheet" href="~/css/student_staff.css" />
 <style>
+    <!-- Change navbar highlighted item based on the page you are in -->
     #student {
         background-color: lightskyblue;
         border-radius: 25px;
     }
 </style>
+<!--JS links-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="~/js/student.js"></script>
+
+<!-- Student information display -->
 <div id="user-info">
     <p class="user-info-label">Student name: <span class="user-info-value" id="user-name">Ms. Leesha Jayasekara</span></p>
     <p class="user-info-label">Student ID: <span class="user-info-value" id="user-id">s4662585</span></p>
     <p class="user-info-label">Course: <span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
 </div>
+
+<!-- Main content -->
 <div id="content">
     <div class="clearfix">
+        <!-- Unit dropdown menu -->
         <div class="dropdown">
             <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-unit">
                 Select Unit 
             </button>
+            <!-- Dropdown items -->
             <ul class="dropdown-menu">
                 <li id="selector-1"><a class="dropdown-item">Applied Project</a></li>
                 <li id="selector-2"><a class="dropdown-item">Advance Web Development</a></li>
@@ -28,6 +37,7 @@
                 <li id="selector-4"><a class="dropdown-item">ICT Business Analytics and Data Visualization</a></li>
             </ul>
         </div>
+        <!-- Category dropdown menu -->
         <div class="dropdown" id="dd-cat">
             <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-category">
                 Select Category
@@ -40,6 +50,7 @@
     </div>
     
     <div id="books" class="container">
+        <!-- Each element in the grid has a separate table -->
         <!---------------------------------------------->
         <div class="content-element applied-project row">
             <!--image-->

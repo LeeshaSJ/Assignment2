@@ -1,9 +1,13 @@
-﻿$(function () {
+﻿// Below is a jQuery page-on-load function
+$(function () {
+    // When selecting one of the items from the dropdown menu, below click functions will get triggered
     $("#selector-1").click(function () {
+        // When selecting applied project item, all other items will disappear from the page
         $(".advance-web-dev").hide();
         $(".online-business-sys").hide();
         $(".ict-bus-analytics").hide();
         $(".applied-project").show();
+        // Change text of dropdown menu
         $("#dropdown-unit").text("Applied Project");
     })
 
