@@ -4,12 +4,24 @@ namespace Assignment2.Models
     public class UserModel
     {
         [Key]
-        public string Id { get; set; }
+        public string? Id { get; set; }
+
+        [MaxLength(150)]
+        [Display(Name = "Full Name")]
+        [DataType(DataType.Text)]
         [Required]
-        public string FirstLastName { get; set; }
+        public string? FullName { get; set; }
+
+        [MaxLength(150)]
+        [Display(Name = "Email")]
+        [DataType(DataType.Text)]
         [Required]
-        public string Email { get; set; }
+        public string? Email { get; set; }
+
+        [MaxLength(150)]
+        [Display(Name = "Department")]
+        [DataType(DataType.Text)]
         [Required]
-        public string Department { get; set; }
+        public string? Department { get; set; }
     }
 }
