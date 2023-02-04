@@ -15,6 +15,7 @@ namespace Assignment2.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     Department = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false)

@@ -22,7 +22,7 @@ namespace Assignment2.Controllers
         // GET: UserModels
         public async Task<IActionResult> Index()
         {
-              return View(await _context.UserModel.ToListAsync());
+            return View(await _context.UserModel.ToListAsync());
         }
 
         // GET: UserModels/Details/5
@@ -54,11 +54,11 @@ namespace Assignment2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FullName,Email,Department")] UserModel userModel)
+        public async Task<IActionResult> Create([Bind("Id,Password,FullName,Email,Department")] UserModel userModel)
         {
-            if (ModelState.IsValid)
+            if (userModel!=null)
             {
-                _context.Add(userModel);
+                _context.UserModel.Add(userModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -86,34 +86,40 @@ namespace Assignment2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,FullName,Email,Department")] UserModel userModel)
+        public async Task<IActionResult> Edit(string id, [Bind("Id, Password,FullName,Email,Department")] UserModel userModel)
         {
-            if (id != userModel.Id)
+            if (userModel == null || id != userModel.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            try
             {
-                try
+                //var user = await _context.UserModel.Where(i=>i.Email==email&& i.Password==password);
+                var user = await _context.UserModel.FindAsync(id);
+                if(user!= null)
                 {
-                    _context.Update(userModel);
+                    user.FullName = userModel.FullName;
+                    user.Email = userModel.Email;
+                    user.Department = userModel.Department;
+                   
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserModelExists(userModel.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                
             }
-            return View(userModel);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserModelExists(userModel.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: UserModels/Delete/5
