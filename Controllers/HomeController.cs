@@ -27,7 +27,7 @@ namespace Assignment2.Controllers
         public IActionResult Login(string username, string password)
         {
             //errrorrrrrrrrrrr whyyyyyyyyyyyyyyy dkdkkow (●'◡'●)😒＞﹏＜(；′⌒`)(；′⌒`)
-            var issuccess = LoginCheck.UserModel(username, password);
+            var issuccess = dbo.UserModel(username, password);
 
 
             if (issuccess.Result != null)
