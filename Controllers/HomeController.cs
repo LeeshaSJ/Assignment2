@@ -16,32 +16,37 @@ namespace Assignment2.Controllers
             _logger = logger;
         }
 
-     
+        [HttpGet]
         public IActionResult Login()
         {
-            return View();
-                
+            return View();      
         }
-     
+
         [HttpPost]
-        public IActionResult Login(string username, string password)
+        public IActionResult Login([Bind] Login ad)
         {
-            //errrorrrrrrrrrrr whyyyyyyyyyyyyyyy dkdkkow (●'◡'●)😒＞﹏＜(；′⌒`)(；′⌒`)
-            var issuccess = dbo.UserModel(username, password);
-
-
-            if (issuccess.Result != null)
+            db obj = new db();
+            int res = obj.LoginCheck(ad);
+            if (res == 1)
             {
-                ViewBag.username = string.Format("Successfully logged-in", username);
-
-                TempData["username"] = "Ahmed";
-                return RedirectToAction("Index", "Layout");
+                string str = ad.user_id;
+                char firstChar = str[0];
+                Console.WriteLine(firstChar);
+                if (firstChar == 's')
+                {
+                    return RedirectToAction("Student", "Home");
+                }
+                else if (firstChar == 't')
+                {
+                    return RedirectToAction("Staff", "Home");
+                }
             }
             else
             {
-                ViewBag.username = string.Format("Login Failed ", username);
-                return View();
+                TempData["msg"] = "Admin id or Password is wrong.!";
+                return RedirectToAction("Login", "Home");
             }
+            return View();
         }
 
         public IActionResult Privacy()
