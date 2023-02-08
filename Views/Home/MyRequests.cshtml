@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<Assignment2.Models.Request>
+
 @{
     ViewData["Title"] = "MyRequests";
 }
@@ -12,7 +13,30 @@
 
 <div id="content">
     <div class="tab-content container">
-        <div class="content-element row">
+        @foreach (var item in Model)
+        {
+            if (ViewData["sessionUserId"] != null)
+            {
+                var userId = ViewData["sessionUserId"];
+                if (String.Equals(item.StudentId, userId))
+                {
+                    <div class="content-element row">
+                        <div class="element-image col"><img src="~/images/@item.Resource.ImagePath" alt="requested resource image" height="100%" /></div>
+                        <div class="element-text col">
+                            <p class="element-name">@item.Resource.ResourceName</p>
+                            <p class="element-description">@item.Resource.ResourceDescription</p>
+                            <p class="element-request-msg">Requested</p>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Error</p>
+            }
+
+        }
+        <!--div class="content-element row">
             <div class="element-image col"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
             <div class="element-text col">
                 <p class="element-name">ASP.NET Book</p>
@@ -28,6 +52,6 @@
                 <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
                 <p class="element-request-msg" style="background-color: green;">Granted</p>
             </div>
-        </div>
+        </div-->
     </div>
 </div>

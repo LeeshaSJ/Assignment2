@@ -12,9 +12,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="~/js/student.js"></script>
 <div id="user-info">
-    <p class="user-info-label">Staff user name: <span class="user-info-value" id="user-name">Dr. Rasika Ranaweera</span></p>
-    <p class="user-info-label">Staff user ID: <span class="user-info-value" id="user-id">l3566194</span></p>
-    <p class="user-info-label">Department: <span class="user-info-value" id="user-dept">Department of Information & System Science</span></p>
+    @if (ViewData["sessionUserId"] != null)
+    {
+        var userId = ViewData["sessionUserId"];
+        var userName = ViewData["sessionUserName"];
+        <p class="user-info-label">Staff user name: <span class="user-info-value" id="user-name">@userName</span></p>
+        <p class="user-info-label">Staff user ID: &nbsp;&nbsp;&nbsp;&nbsp; <span class="user-info-value" id="user-id">@userId</span></p>
+        <p class="user-info-label">Department: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-dept">Department of Information & System Science</span></p>
+    }
 </div>
 <div id="content">
     <div class="clearfix">

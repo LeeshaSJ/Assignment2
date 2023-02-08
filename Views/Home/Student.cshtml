@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Assignment2.Models.Resources>
+
+@{
     ViewData["Title"] = "Student";
 }
 <!--CSS links-->
@@ -16,9 +18,14 @@
 
 <!-- Student information display -->
 <div id="user-info">
-    <p class="user-info-label">Student name: <span class="user-info-value" id="user-name">Ms. Leesha Jayasekara</span></p>
-    <p class="user-info-label">Student ID: <span class="user-info-value" id="user-id">s4662585</span></p>
-    <p class="user-info-label">Course: <span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
+    @if (ViewData["sessionUserId"] != null)
+    {
+        var userId = ViewData["sessionUserId"];
+        var userName = ViewData["sessionUserName"];
+        <p class="user-info-label">Student name: <span class="user-info-value" id="user-name">@userName</span></p>
+        <p class="user-info-label">Student ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-id">@userId</span></p>
+        <p class="user-info-label">Course: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
+    }
 </div>
 
 <!-- Main content -->
@@ -31,10 +38,10 @@
             </button>
             <!-- Dropdown items -->
             <ul class="dropdown-menu">
-                <li id="selector-1"><a class="dropdown-item">Applied Project</a></li>
-                <li id="selector-2"><a class="dropdown-item">Advance Web Development</a></li>
-                <li id="selector-3"><a class="dropdown-item">Online Business System Development</a></li>
-                <li id="selector-4"><a class="dropdown-item">ICT Business Analytics and Data Visualization</a></li>
+                <li id="selector-1"><a class="dropdown-item">NEF3002: Applied Project</a></li>
+                <li id="selector-2"><a class="dropdown-item">NIT3112: Advance Web Development</a></li>
+                <li id="selector-3"><a class="dropdown-item">NIT3114: Business System Development</a></li>
+                <li id="selector-4"><a class="dropdown-item">NIT3171: ICT Business Analytics and Data Visualization</a></li>
             </ul>
         </div>
         <!-- Category dropdown menu -->
@@ -48,7 +55,63 @@
             </ul>
         </div>
     </div>
-    
+    <div id="books" class="container">
+
+        @foreach (var item in Model)
+        {
+            if (item.Unit == "AppliedProject" && item.ResourceType == "Book")
+            {
+
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element applied-project row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>      
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    <div class="element-button col">
+                        <div class="centerbox">
+                            <button class="btn-request" onclick="RequestSend('@item.ResourceId')">Request</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div id="devices" class="container">
+
+        @foreach (var item in Model)
+        {
+            if (item.Unit == "AppliedProject" && item.ResourceType == "Device")
+            {
+
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element applied-project row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>      
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    <div class="element-button col">
+                        <div class="centerbox">
+                            <button class="btn-request" onclick="RequestSend('@item.ResourceId')">Request</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    @*
     <div id="books" class="container">
         <!-- Each element in the grid has a separate table -->
         <!---------------------------------------------->
@@ -173,8 +236,8 @@
             <div class="element-image col"><img src="~/images/Apple5.jpg" alt="requested resource image" /></div>
             <!--text-->
             <div class="element-text col">
-                <p class="element-name">High performance laptop</p>
-                <p class="element-description">HP Intel i3 11th Gen 15s...</p>
+                <p class="element-name">High performance Computer</p>
+                <p class="element-description">macOS Monterey (version 11.2.1) - 8-core...</p>
             </div>
             <!--button-->
             <div class="element-button col">
@@ -183,5 +246,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 </div>
+
+<script>
+    function RequestSend(id) {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("StudentRequest", "Home")',
+            data: { Id: id },
+            success: function(msg) {
+                // Replace the div's content with the page method's return.
+                $("#Result").text(msg.d);
+            }
+        });
+    }
+</script>

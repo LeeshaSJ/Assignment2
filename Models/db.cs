@@ -26,5 +26,31 @@ namespace Assignment2.Models
             Con.Close();
             return res;
         }
+
+        public List<Resources> GetResources(Login ad)
+        {
+            var com = new SqlCommand("Sp_GetResources", Con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@user_id", ad.user_id);
+            com.Parameters.AddWithValue("@Password", ad.Password);
+            Con.Open();
+            var reader = com.ExecuteReader();
+            List<Resources> resources = new List<Resources>();
+            while (reader.Read())
+            {
+                resources.Add(new Resources
+                {
+                    ResourceId = (string)reader["Id"],
+                    ResourceName = (string)reader["ResourceName"],
+                    ResourceType = (string)reader["ResourceType"],
+                    ResourceDescription = (string)reader["Resource Description"],
+                    Quantity = (int)reader["Quantity"],
+                    Unit = (string)reader["Unit"]
+                });
+            }
+            Con.Close();
+            return resources;
+        }
+
     }
 }
