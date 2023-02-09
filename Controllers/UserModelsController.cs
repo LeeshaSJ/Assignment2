@@ -22,25 +22,25 @@ namespace Assignment2.Controllers
         // GET: UserModels
         public async Task<IActionResult> Index()
         {
-            return View(await _context.UserModel.ToListAsync());
+            return View(await _context.User.ToListAsync());
         }
 
         // GET: UserModels/Details/5
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.UserModel == null)
+            if (id == null || _context.User == null)
             {
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (userModel == null)
+            var userModel = await _context.User
+                .FirstOrDefaultAsync(m => m.UserId == id);
+            if (User == null)
             {
                 return NotFound();
             }
 
-            return View(userModel);
+            return View(User);
         }
 
         // GET: UserModels/Create
@@ -54,31 +54,31 @@ namespace Assignment2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Password,FullName,Email,Department")] UserModel userModel)
+        public async Task<IActionResult> Create([Bind("Id,Password,FullName,Email")] UserModel User)
         {
-            if (userModel!=null)
+            if (User!=null)
             {
-                _context.UserModel.Add(userModel);
+                _context.User.Add(User);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(userModel);
+            return View(User);
         }
 
         // GET: UserModels/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.UserModel == null)
+            if (id == null || _context.User == null)
             {
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel.FindAsync(id);
-            if (userModel == null)
+            var User = await _context.User.FindAsync(id);
+            if (User == null)
             {
                 return NotFound();
             }
-            return View(userModel);
+            return View(User);
         }
 
         // POST: UserModels/Edit/5
@@ -86,22 +86,21 @@ namespace Assignment2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id, Password,FullName,Email,Department")] UserModel userModel)
+        public async Task<IActionResult> Edit(string id, [Bind("Id, Password,FullName,Email")] UserModel User)
         {
-            if (userModel == null || id != userModel.Id)
+            if (User == null || id != User.UserId)
             {
                 return NotFound();
             }
 
             try
             {
-                //var user = await _context.UserModel.Where(i=>i.Email==email&& i.Password==password);
-                var user = await _context.UserModel.FindAsync(id);
+                //var user = await _context.User.Where(i=>i.Email==email&& i.Password==password);
+                var user = await _context.User.FindAsync(id);
                 if(user!= null)
                 {
-                    user.FullName = userModel.FullName;
-                    user.Email = userModel.Email;
-                    user.Department = userModel.Department;
+                    user.FullName = User.FullName;
+                    user.Email = User.Email;
                    
                     await _context.SaveChangesAsync();
                 }
@@ -109,7 +108,7 @@ namespace Assignment2.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserModelExists(userModel.Id))
+                if (!UserExists(User.UserId))
                 {
                     return NotFound();
                 }
@@ -122,46 +121,46 @@ namespace Assignment2.Controllers
 
         }
 
-        // GET: UserModels/Delete/5
+        // GET: Users/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.UserModel == null)
+            if (id == null || _context.User == null)
             {
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (userModel == null)
+            var User = await _context.User
+                .FirstOrDefaultAsync(m => m.UserId == id);
+            if (User == null)
             {
                 return NotFound();
             }
 
-            return View(userModel);
+            return View(User);
         }
 
-        // POST: UserModels/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.UserModel == null)
+            if (_context.User == null)
             {
-                return Problem("Entity set 'MyDBContext.UserModel'  is null.");
+                return Problem("Entity set 'MyDBContext.User'  is null.");
             }
-            var userModel = await _context.UserModel.FindAsync(id);
-            if (userModel != null)
+            var User = await _context.User.FindAsync(id);
+            if (User != null)
             {
-                _context.UserModel.Remove(userModel);
+                _context.User.Remove(User);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserModelExists(string id)
+        private bool UserExists(string id)
         {
-          return _context.UserModel.Any(e => e.Id == id);
+          return _context.User.Any(e => e.UserId == id);
         }
     }
 }

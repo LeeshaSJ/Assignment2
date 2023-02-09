@@ -1,4 +1,5 @@
-﻿
+﻿@model List<Tuple<TeacherModel, RequestModel>>
+
 @{
     ViewData["Title"] = "StudentRequests";
 }
@@ -13,17 +14,32 @@
 
 <div id="content">
     <div class="tab-content container">
-        <div class="content-element row">
-            <div class="element-image col"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
-            <div class="element-text col">
-                <p class="element-name">ASP.NET Book</p>
-                <p class="element-description">The complete reference to ASP.NET...</p>
-                <p class="element-requested-by">Requested by: </p>
-                <button class="accept">Accept</button>
-                <button class="decline">Decline</button>
-            </div>
-        </div>
-
+        @foreach (var item in Model)
+        {
+            if (ViewData["sessionUserId"] != null)
+            {
+                var userId = ViewData["sessionUserId"];
+                if (String.Equals(item.Item1.UserId, userId))
+                {
+                    var unit = item.Item1.Units;
+                    if (String.Equals(item.Item2.UnitId, unit))
+                    {
+                        <div class="content-element row">
+                            <div class="element-image col"><img src="~/images/@item.Item2.Resource.ImagePath" alt="requested resource image" height="100%" /></div>
+                            <div class="element-text col">
+                                <p class="element-name">@item.Item2.Resource.ResourceName</p>
+                                <p class="element-description">@item.Item2.Resource.ResourceDescription</p>
+                                <p class="element-requested-by">Requested by: @item.Item2.StudentId</p>
+                                <button class="accept">Accept</button>
+                                <button class="decline">Decline</button>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        }
+        
+        @*
         <div class="content-element row">
             <div class="element-image col"><img src="~/images/eBusiness.jpg" alt="requested resource image" height="100%" /></div>
             <div class="element-text col">
@@ -43,6 +59,6 @@
                 <button class="accept">Accepted</button>
                 <button class="decline">Decline</button>
             </div>
-        </div>
+        </div>*@
     </div>
 </div>    

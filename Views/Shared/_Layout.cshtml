@@ -25,9 +25,6 @@
                         <li id="login" class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
                         </li>
-                        <li id="home" class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
                         <li id="student" class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Student">Student</a>
                         </li>
@@ -44,6 +41,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="UserModels" asp-action="Index">Users</a>
                         </li>
                     </ul>
+                </div>
+                <div id="logout" class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ClearSession">Logout</a>
                 </div>
             </div>
         </nav>

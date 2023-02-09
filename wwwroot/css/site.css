@@ -55,3 +55,7 @@ form {
 #navbar-logo {
     width: 110px;
 }
+
+#logout {
+    float: right;
+}

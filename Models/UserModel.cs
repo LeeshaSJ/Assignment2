@@ -4,7 +4,7 @@ namespace Assignment2.Models
     public class UserModel
     {
         [Key]
-        public string Id { get; set; }
+        public string? UserId { get; set; }
         
         //public string? user_id { get; set; }
 
@@ -26,10 +26,7 @@ namespace Assignment2.Models
         [Required]
         public string? Email { get; set; }
 
-        [MaxLength(150)]
-        [Display(Name = "Department")]
-        [DataType(DataType.Text)]
-        [Required]
-        public string? Department { get; set; }
+        public StudentModel? Student { get; set; }
+        public TeacherModel? Teacher { get; set; }
     }
 }

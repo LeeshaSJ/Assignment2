@@ -26,15 +26,14 @@ namespace Assignment2.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([Bind] Login ad)
+        public async Task<IActionResult> Login([Bind] LoginModel ad)
         {
-           
-            var user = await _context.UserModel.FirstOrDefaultAsync(i => i.Id == ad.user_id && i.Password == ad.Password);
+            var user = await _context.User.FirstOrDefaultAsync(i => i.UserId == ad.user_id && i.Password == ad.Password);
             //db obj = new db();
             //int res = obj.LoginCheck(ad);
             if (user !=null)
             {
-                HttpContext.Session.SetString("userId", user.Id);
+                HttpContext.Session.SetString("userId", user.UserId);
                 HttpContext.Session.SetString("userName", user.FullName);
 
                 string str = ad.user_id;
@@ -57,9 +56,11 @@ namespace Assignment2.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ClearSession()
         {
-            return View();
+            HttpContext.Session.Remove("userId");
+            HttpContext.Session.Remove("userName");
+            return RedirectToAction("Login");
         }
 
         public IActionResult Index()
@@ -76,10 +77,10 @@ namespace Assignment2.Controllers
             return View(await _context.Resources.ToListAsync());
         }
 
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Home/StudentRequest")]
-        public async Task<IActionResult> StudentRequest([Bind("Id")] ResourceRequest resources)
+        public async Task<IActionResult> StudentRequest([Bind("Id")] RequestModel resources)
         {
             if (resources == null )
             {
@@ -94,7 +95,6 @@ namespace Assignment2.Controllers
             //    {
             //        user.FullName = userModel.FullName;
             //        user.Email = userModel.Email;
-            //        user.Department = userModel.Department;
 
             //        await _context.SaveChangesAsync();
             //    }
@@ -112,8 +112,7 @@ namespace Assignment2.Controllers
             //    }
             //}
             return RedirectToAction(nameof(Index));
-
-        }
+        }*/
 
         public IActionResult Staff()
         {
@@ -129,7 +128,7 @@ namespace Assignment2.Controllers
             return View();
         }*/
 
-        public async Task<IActionResult> MyRequests(string searchTerm)
+        public async Task<IActionResult> MyRequests()
         {
             //Get value from Session object.
             ViewData["sessionUserId"] = HttpContext.Session.GetString("userId");
@@ -137,19 +136,25 @@ namespace Assignment2.Controllers
             var requests = _context.Request
                 .Include(res => res.Resource);
 
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                requests = (Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<Request, Models.Resources?>)requests.Where(r => r.StudentId.Contains(searchTerm));
-            }
-
             var model = await requests.ToListAsync();
 
             return View(model);
         }
 
-        public IActionResult StudentRequests()
+        public async Task<IActionResult> StudentRequests()
         {
-            return View();
+            //Get value from Session object.
+            var sessionUserId = HttpContext.Session.GetString("userId");
+            ViewData["sessionUserId"] = sessionUserId;
+
+            var requests = _context.Request
+                .Include(res => res.Resource);
+
+            var model = from t in _context.Teacher
+                        join r in requests on t.Units equals r.UnitId
+                        select new Tuple<TeacherModel, RequestModel>(t, r);
+
+            return View(await model.ToListAsync());
         }
 
       

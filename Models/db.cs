@@ -9,7 +9,7 @@ namespace Assignment2.Models
 
         public SqlConnection Con { get => con; set => con = value; }
 
-        public int LoginCheck(Login ad)
+        public int LoginCheck(LoginModel ad)
         {
             var com = new SqlCommand("Sp_Login", Con);
             com.CommandType = CommandType.StoredProcedure;
@@ -27,7 +27,7 @@ namespace Assignment2.Models
             return res;
         }
 
-        public List<Resources> GetResources(Login ad)
+        public List<ResourcesModel> GetResources(LoginModel ad)
         {
             var com = new SqlCommand("Sp_GetResources", Con);
             com.CommandType = CommandType.StoredProcedure;
@@ -35,10 +35,10 @@ namespace Assignment2.Models
             com.Parameters.AddWithValue("@Password", ad.Password);
             Con.Open();
             var reader = com.ExecuteReader();
-            List<Resources> resources = new List<Resources>();
+            List<ResourcesModel> resources = new List<ResourcesModel>();
             while (reader.Read())
             {
-                resources.Add(new Resources
+                resources.Add(new ResourcesModel
                 {
                     ResourceId = (string)reader["Id"],
                     ResourceName = (string)reader["ResourceName"],
