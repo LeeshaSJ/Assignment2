@@ -22,6 +22,7 @@ namespace Assignment2.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            ViewData["navbarVisibility"] = "index";
             return View();      
         }
 
