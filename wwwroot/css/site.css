@@ -59,3 +59,7 @@ form {
 #logout {
     float: right;
 }
+
+.hidden {
+    display: none;
+}

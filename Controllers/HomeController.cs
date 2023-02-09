@@ -31,7 +31,7 @@ namespace Assignment2.Controllers
             var user = await _context.User.FirstOrDefaultAsync(i => i.UserId == ad.user_id && i.Password == ad.Password);
             //db obj = new db();
             //int res = obj.LoginCheck(ad);
-            if (user !=null)
+            if (user != null)
             {
                 HttpContext.Session.SetString("userId", user.UserId);
                 HttpContext.Session.SetString("userName", user.FullName);
@@ -60,6 +60,7 @@ namespace Assignment2.Controllers
         {
             HttpContext.Session.Remove("userId");
             HttpContext.Session.Remove("userName");
+            
             return RedirectToAction("Login");
         }
 
@@ -70,6 +71,7 @@ namespace Assignment2.Controllers
 
         public async Task<IActionResult> Student()
         {
+            ViewData["navbarVisibility"] = "student";
             //Get value from Session object.
             ViewData["sessionUserId"] = HttpContext.Session.GetString("userId");
             ViewData["sessionUserName"] = HttpContext.Session.GetString("userName");
@@ -116,6 +118,7 @@ namespace Assignment2.Controllers
 
         public IActionResult Staff()
         {
+            ViewData["navbarVisibility"] = "teacher";
             //Get value from Session object.
             ViewData["sessionUserId"] = HttpContext.Session.GetString("userId");
             ViewData["sessionUserName"] = HttpContext.Session.GetString("userName");
@@ -130,6 +133,7 @@ namespace Assignment2.Controllers
 
         public async Task<IActionResult> MyRequests()
         {
+            ViewData["navbarVisibility"] = "student";
             //Get value from Session object.
             ViewData["sessionUserId"] = HttpContext.Session.GetString("userId");
 
@@ -143,6 +147,7 @@ namespace Assignment2.Controllers
 
         public async Task<IActionResult> StudentRequests()
         {
+            ViewData["navbarVisibility"] = "teacher";
             //Get value from Session object.
             var sessionUserId = HttpContext.Session.GetString("userId");
             ViewData["sessionUserId"] = sessionUserId;

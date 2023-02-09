@@ -22,27 +22,51 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li id="login" class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
-                        </li>
-                        <li id="student" class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Student">Student</a>
-                        </li>
-                        <li id="staff" class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Staff">Staff</a>
-                        </li>
-                        <li id="myRequest" class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MyRequests">My Requests</a>
-                        </li>
-                        <li id="stdRequest" class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="StudentRequests">Student Requests</a>
-                        </li>
-                        <li id="user" class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="UserModels" asp-action="Index">Users</a>
-                        </li>
+                        @{
+                            // Get the control variable from backend controller
+                            var navbarControl = ViewData["navbarVisibility"];
+
+                            // Hide all tabs by default
+                            bool showStudentTabs = false;
+                            bool showTeacherTabs = false;
+                            bool showAdminTabs = false;
+                            bool showLogoutTab = false;
+
+                            if (String.Equals("student", navbarControl))
+                            {
+                                showStudentTabs = true;
+                                showLogoutTab = true;
+                            }
+                            else if (String.Equals("teacher", navbarControl))
+                            {
+                                showTeacherTabs = true;
+                                showLogoutTab = true;
+                            }
+                            else if (String.Equals("admin", navbarControl))
+                            {
+                                showAdminTabs = true;
+                                showLogoutTab = true;
+                            }
+
+                            <li id="student" class="nav-item @(showStudentTabs ? "" : "hidden")">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Student">Student</a>
+                            </li>
+                            <li id="staff" class="nav-item @(showTeacherTabs ? "" : "hidden")">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Staff">Staff</a>
+                            </li>
+                            <li id="myRequest" class="nav-item @(showStudentTabs ? "" : "hidden")">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MyRequests">My Requests</a>
+                            </li>
+                            <li id="stdRequest" class="nav-item @(showTeacherTabs ? "" : "hidden")">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="StudentRequests">Student Requests</a>
+                            </li>
+                            <li id="user" class="nav-item @(showAdminTabs ? "" : "hidden")">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="UserModels" asp-action="Index">Users</a>
+                            </li>
+                        }
                     </ul>
                 </div>
-                <div id="logout" class="nav-item">
+                <div id="logout" class="nav-item @(showLogoutTab ? "" : "hidden")">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ClearSession">Logout</a>
                 </div>
             </div>
