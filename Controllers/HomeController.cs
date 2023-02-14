@@ -80,42 +80,58 @@ namespace Assignment2.Controllers
             return View(await _context.Resources.ToListAsync());
         }
 
-        /*[HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("Home/StudentRequest")]
-        public async Task<IActionResult> StudentRequest([Bind("Id")] RequestModel resources)
+        [HttpPost]
+        [Route("Home/StudentItemRequest")]
+        public async Task<IActionResult> StudentItemRequest([FromBody] StudentRequestModel resources)
         {
-            if (resources == null )
+            try
             {
-                return NotFound();
+                if (User != null)
+                {
+                    var userId = HttpContext.Session.GetString("userId");
+                    RequestModel requestModel = new RequestModel();
+                    requestModel.ResourceId = resources.Id;
+                    requestModel.StudentId = userId;
+                    requestModel.UnitId = resources.Unit;
+
+                    _context.Request.Add(requestModel);
+                    await _context.SaveChangesAsync();
+                    return Ok("Success");
+                }
+            }
+            catch (Exception e)
+            {
+
+                return Error();
+            }
+            
+            return BadRequest();
+        }
+
+        [HttpPost]
+        [Route("Home/RequestApproval")]
+        public async Task<IActionResult> RequestApproval([FromBody] RequestUpdateModel request)
+        {
+            try
+            {
+                if (request != null)
+                {
+                    var userId = HttpContext.Session.GetString("userId");
+                    var requestData = _context.Request.FirstOrDefault(i => i.RequestId == request.RequestId);
+                    requestData.IsApproval = request.IsApproval;
+                   
+                    _context.Request.Update(requestData);
+                    await _context.SaveChangesAsync();
+                    return Ok("Success");
+                }
+            }
+            catch (Exception e)
+            {
+                return Error();
             }
 
-            //try
-            //{
-            //    //var user = await _context.UserModel.Where(i=>i.Email==email&& i.Password==password);
-            //    var user = await _context.Res.FindAsync(id);
-            //    if (user != null)
-            //    {
-            //        user.FullName = userModel.FullName;
-            //        user.Email = userModel.Email;
-
-            //        await _context.SaveChangesAsync();
-            //    }
-
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (!UserModelExists(userModel.Id))
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-            return RedirectToAction(nameof(Index));
-        }*/
+            return BadRequest();
+        }
 
         public IActionResult Staff()
         {
@@ -153,14 +169,14 @@ namespace Assignment2.Controllers
             var sessionUserId = HttpContext.Session.GetString("userId");
             ViewData["sessionUserId"] = sessionUserId;
 
-            var requests = _context.Request
+            var requests = _context.Request.Where(i=>i.IsApproval==null)
                 .Include(res => res.Resource);
 
-            var model = from t in _context.Teacher
+            var model = await (from t in _context.Teacher
                         join r in requests on t.Units equals r.UnitId
-                        select new Tuple<TeacherModel, RequestModel>(t, r);
+                        select new Tuple<TeacherModel, RequestModel>(t, r)).ToListAsync();
 
-            return View(await model.ToListAsync());
+            return View(model);
         }
 
       

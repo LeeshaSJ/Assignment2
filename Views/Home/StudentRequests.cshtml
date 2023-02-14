@@ -30,8 +30,8 @@
                                 <p class="element-name">@item.Item2.Resource.ResourceName</p>
                                 <p class="element-description">@item.Item2.Resource.ResourceDescription</p>
                                 <p class="element-requested-by">Requested by: @item.Item2.StudentId</p>
-                                <button class="accept">Accept</button>
-                                <button class="decline">Decline</button>
+                                <button class="accept" onclick="AcceptRequest('@item.Item2.RequestId')">Accept</button>
+                                <button class="decline" onclick="DeclineRequest('@item.Item2.RequestId')">Decline</button>
                             </div>
                         </div>
                     }
@@ -61,4 +61,36 @@
             </div>
         </div>*@
     </div>
-</div>    
+</div>
+
+<script type="text/javascript">
+    function AcceptRequest(id) {
+        var pdata = JSON.stringify({ requestId: id, isApproval: true });
+        $.ajax({
+            type: "POST",
+            url: '/Home/RequestApproval',
+            contentType: "application/json",
+            dataType: "json",
+            data: pdata,
+
+            success: function(msg) {
+               // alert("Process Success");
+            }
+        });
+    }
+
+    function DeclineRequest(id) {
+       var pdata = JSON.stringify({ requestId: id, isApproval: false });
+        $.ajax({
+            type: "POST",
+            url: '/Home/RequestApproval',
+            contentType: "application/json",
+            dataType: "json",
+            data: pdata,
+            success: function(msg) {
+                // Replace the div's content with the page method's return.
+                alert(msg);
+            }
+        });
+    }
+</script>

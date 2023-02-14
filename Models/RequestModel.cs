@@ -8,9 +8,8 @@ namespace Assignment2.Models
         [Key]
         [MaxLength(150)]
         [Display(Name = "Request Id")]
-        [DataType(DataType.Text)]
-        [Required]
-        public string? RequestId { get; set; }
+        
+        public int RequestId { get; set; }
 
         [MaxLength(150)] 
         [Display(Name = "Student Id")]
@@ -29,6 +28,9 @@ namespace Assignment2.Models
         [DataType(DataType.Text)]
         [Required]
         public string? UnitId { get; set; }
+
+        [Display(Name = "Approval")]
+        public bool? IsApproval { get; set; }
 
         public ResourcesModel? Resource { get; set; }
 
