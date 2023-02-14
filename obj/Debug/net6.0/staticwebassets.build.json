@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Rwro1nDuwysr+HwUMogdc9cv3xZSElv1z8kfyq6rlOE=",
+  "Hash": "z/MRE8MWFNPHdtj5GJGNBeHyGKemn8JREsgeqnDb3HY=",
   "Source": "Assignment2",
   "BasePath": "_content/Assignment2",
   "Mode": "Default",
@@ -187,6 +187,23 @@
       "OriginalItemSpec": "wwwroot\\images\\Apple5.jpg"
     },
     {
+      "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\Business Information Systems.png",
+      "SourceId": "Assignment2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\",
+      "BasePath": "_content/Assignment2",
+      "RelativePath": "images/Business Information Systems.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Business Information Systems.png"
+    },
+    {
       "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\C#_pro.jpg",
       "SourceId": "Assignment2",
       "SourceType": "Discovered",
@@ -221,6 +238,23 @@
       "OriginalItemSpec": "wwwroot\\images\\Data_V1.png"
     },
     {
+      "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\Design for How People Think.png",
+      "SourceId": "Assignment2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\",
+      "BasePath": "_content/Assignment2",
+      "RelativePath": "images/Design for How People Think.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Design for How People Think.png"
+    },
+    {
       "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\eBusiness.jpg",
       "SourceId": "Assignment2",
       "SourceType": "Discovered",
@@ -236,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\eBusiness.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\Hands On Data Visualization.png",
+      "SourceId": "Assignment2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\",
+      "BasePath": "_content/Assignment2",
+      "RelativePath": "images/Hands On Data Visualization.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Hands On Data Visualization.png"
     },
     {
       "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\hp1-1.png",
@@ -304,6 +355,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Micro2.webp"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\PhpMysql.png",
+      "SourceId": "Assignment2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\",
+      "BasePath": "_content/Assignment2",
+      "RelativePath": "images/PhpMysql.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\PhpMysql.png"
     },
     {
       "Identity": "C:\\Users\\User\\source\\repos\\Assignment2\\wwwroot\\images\\python.jpg",

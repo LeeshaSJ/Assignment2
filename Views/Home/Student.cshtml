@@ -58,9 +58,8 @@
 
         @foreach (var item in Model)
         {
-            if (item.Unit == "AppliedProject" && item.ResourceType == "Book")
+            if (item.UnitId == "NEF3002" && item.ResourceType == "Book")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element applied-project row">
@@ -69,21 +68,35 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p>  
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-book" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
 
-            if (item.Unit == "AdvanceWebDevelopment" && item.ResourceType == "Book")
+            if (item.UnitId == "NIT3112" && item.ResourceType == "Book")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element advance-web-dev row">
@@ -92,21 +105,35 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p> 
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-book" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
 
-            if (item.Unit == "OnlineBusinessSystemDevelopment" && item.ResourceType == "Book")
+            if (item.UnitId == "NIT3114" && item.ResourceType == "Book")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element online-business-sys row">
@@ -115,21 +142,35 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p>    
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-book" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
 
-            if (item.Unit == "IctBusinessAnalyticsandDataVisualization" && item.ResourceType == "Book")
+            if (item.UnitId == "NIT3171" && item.ResourceType == "Book")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element ict-bus-analytics row">
@@ -138,15 +179,30 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p>  
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-book" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
         }
@@ -155,9 +211,8 @@
 
         @foreach (var item in Model)
         {
-            if (item.Unit == "AppliedProject" && item.ResourceType == "Device")
+            if (item.UnitId == "NEF3002" && item.ResourceType == "Device")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element applied-project row">
@@ -166,21 +221,35 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p>   
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-device" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
 
-            if (item.Unit == "AdvanceWebDevelopment" && item.ResourceType == "Device")
+            if (item.UnitId == "NIT3112" && item.ResourceType == "Device")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element advance-web-dev row">
@@ -189,21 +258,35 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p>   
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-book" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
 
-            if (item.Unit == "OnlineBusinessSystemDevelopment" && item.ResourceType == "Device")
+            if (item.UnitId == "NIT3114" && item.ResourceType == "Device")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element online-business-sys row">
@@ -212,21 +295,35 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p>  
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-book" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
 
-            if (item.Unit == "IctBusinessAnalyticsandDataVisualization" && item.ResourceType == "Device")
+            if (item.UnitId == "NIT3171" && item.ResourceType == "Device")
             {
-
                 <!-- Each element in the grid has a separate table -->
                 <!---------------------------------------------->
                 <div class="content-element ict-bus-analytics row">
@@ -235,15 +332,30 @@
                     <!--text-->
                     <div class="element-text col">
                         <p class="element-name">@item.ResourceName</p>
-                        <p class="element-description">@item.ResourceDescription</p>      
+                        <p class="element-description">@item.ResourceDescription</p>   
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    <div class="element-button col">
-                        <div class="centerbox">
-                            <button class="btn-request" id="btn-book" onclick="RequestSend('@item.ResourceId','@item.Unit')">Request</button>
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
         }
@@ -341,12 +453,7 @@ $(function () {
     }
 
     $(function(){
-        $("#btn-book").click(function() {
-            $(this).text("Requested");
-            $(this).prop("disabled",true);
-            
-        });
-        $("#btn-device").click(function() {
+        $(".btn-request").click(function() {
             $(this).text("Requested");
             $(this).prop("disabled",true);
         });

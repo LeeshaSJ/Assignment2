@@ -31,16 +31,19 @@ namespace Assignment2.Models
         public int? Quantity { get; set; }
 
         [MaxLength(150)]
-        [Display(Name = "Unit")]
+        [Display(Name = "Unit Id")]
         [DataType(DataType.Text)]
         [Required]
-        public string? Unit { get; set; }
+        public string? UnitId { get; set; }
 
         [MaxLength(150)]
         [Display(Name = "Image Path")]
         [DataType(DataType.Text)]
         [Required]
         public string? ImagePath { get; set; }
+
+        [Display(Name = "Valuable")]
+        public bool? IsValuable { get; set; }
 
         public RequestModel? Request { get; set; }
     }

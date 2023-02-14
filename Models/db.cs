@@ -45,7 +45,7 @@ namespace Assignment2.Models
                     ResourceType = (string)reader["ResourceType"],
                     ResourceDescription = (string)reader["Resource Description"],
                     Quantity = (int)reader["Quantity"],
-                    Unit = (string)reader["Unit"]
+                    UnitId = (string)reader["UnitId"]
                 });
             }
             Con.Close();

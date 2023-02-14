@@ -8,7 +8,6 @@ namespace Assignment2.Models
         [Key]
         [MaxLength(150)]
         [Display(Name = "Request Id")]
-        
         public int RequestId { get; set; }
 
         [MaxLength(150)] 
@@ -33,6 +32,5 @@ namespace Assignment2.Models
         public bool? IsApproval { get; set; }
 
         public ResourcesModel? Resource { get; set; }
-
     }
 }

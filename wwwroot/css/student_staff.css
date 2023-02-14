@@ -104,6 +104,10 @@ img {
     background-color: #afe9ff;
 }
 
+.red-back {
+    background-color: #ff5e5e;
+}
+
 .btn-request {
     background-color: white;
     color: black;
