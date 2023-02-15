@@ -19,6 +19,7 @@ namespace Assignment2.Data
         public DbSet<Assignment2.Models.TeacherModel> Teacher { get; set; } = default!;
         public DbSet<Assignment2.Models.ResourcesModel> Resources { get; set; } = default!;
         public DbSet<Assignment2.Models.RequestModel> Request { get; set; } = default!;
+        public DbSet<Assignment2.Models.AllocationModel> Allocation { get; set; } = default!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RequestModel>()

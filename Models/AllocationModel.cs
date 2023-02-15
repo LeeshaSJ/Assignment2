@@ -1,24 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace Assignment2.Models
 {
-    public class Allocation
+    public class AllocationModel
     {
         [Key]
-        public string Id { get; set; }
-
-        //public string? user_id { get; set; }
+        public string? AllocationId { get; set; }
 
         [MaxLength(150)]
         [Display(Name = "Allocation Date")]
         [DataType(DataType.Date)]
         [Required]
-        public DateOnly? AllocationDate { get; set; }
+        public DateTime? AllocationDate { get; set; }
 
         [MaxLength(150)]
         [Display(Name = "Return Date")]
         [DataType(DataType.Date)]
         [Required]
-        public DateOnly? ReturnDate { get; set; }
+        public DateTime? ReturnDate { get; set; }
 
         [MaxLength(150)]
         [Display(Name = "Student ID")]

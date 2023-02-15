@@ -5,8 +5,6 @@ namespace Assignment2.Models
     {
         [Key]
         public string? UserId { get; set; }
-        
-        //public string? user_id { get; set; }
 
         [MaxLength(150)]
         [Display(Name = "Full Name")]

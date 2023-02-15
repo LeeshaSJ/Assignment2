@@ -30,7 +30,7 @@
                                 <p class="element-name">@item.Item2.Resource.ResourceName</p>
                                 <p class="element-description">@item.Item2.Resource.ResourceDescription</p>
                                 <p class="element-requested-by">Requested by: @item.Item2.StudentId</p>
-                                <button class="accept" onclick="AcceptRequest('@item.Item2.RequestId')">Accept</button>
+                                <button class="accept" onclick="AcceptRequest('@item.Item2.RequestId','@item.Item2.StudentId','@item.Item2.ResourceId')">Accept</button>
                                 <button class="decline" onclick="DeclineRequest('@item.Item2.RequestId')">Decline</button>
                             </div>
                         </div>
@@ -64,8 +64,8 @@
 </div>
 
 <script type="text/javascript">
-    function AcceptRequest(id) {
-        var pdata = JSON.stringify({ requestId: id, isApproval: true });
+    function AcceptRequest(reqId, studId, resId) {
+        var pdata = JSON.stringify({ requestId: reqId, isApproval: true });
         $.ajax({
             type: "POST",
             url: '/Home/RequestApproval',
@@ -76,8 +76,20 @@
                 alert("Request accepted!");
             }
         });
+        var allocationData = JSON.stringify({ studentId: studId, resourceId: resId });
+        $.ajax({
+            type: "POST",
+            url: '/Home/Allocate',
+            contentType: "application/json",
+            dataType: "json",
+            data: allocationData,
+            success: function (msg) {
+                // Allocation success!
+            }
+        });
+
         alert("Request accepted!");
-        window.location.reload();
+        //window.location.reload();
     }
 
     function DeclineRequest(id) {

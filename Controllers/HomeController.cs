@@ -102,7 +102,6 @@ namespace Assignment2.Controllers
             }
             catch (Exception e)
             {
-
                 return Error();
             }
             
@@ -131,6 +130,33 @@ namespace Assignment2.Controllers
                 return Error();
             }
             
+            return BadRequest();
+        }
+
+        [HttpPost]
+        [Route("Home/Allocate")]
+        public async Task<IActionResult> Allocate([FromBody] ResourceAllocationModel allocation)
+        {
+            try
+            {
+                if (User != null)
+                {
+                    AllocationModel allocationModel = new AllocationModel();
+                    //allocationModel.AllocationDate = allocation.AllocationDate;
+                    //allocationModel.ReturnDate = allocation.ReturnDate;
+                    allocationModel.StudentId = allocation.StudentId;
+                    allocationModel.ResourceId = allocation.ResourceId;
+
+                    _context.Allocation.Add(allocationModel);
+                    await _context.SaveChangesAsync();
+                    return Ok("Success");
+                }
+            }
+            catch (Exception e)
+            {
+                return Error();
+            }
+
             return BadRequest();
         }
 
