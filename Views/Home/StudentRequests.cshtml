@@ -72,11 +72,12 @@
             contentType: "application/json",
             dataType: "json",
             data: pdata,
-
             success: function(msg) {
-               // alert("Process Success");
+                alert("Request accepted!");
             }
         });
+        alert("Request accepted!");
+        window.location.reload();
     }
 
     function DeclineRequest(id) {
@@ -88,9 +89,10 @@
             dataType: "json",
             data: pdata,
             success: function(msg) {
-                // Replace the div's content with the page method's return.
-                alert(msg);
+                alert("Request declined!");
             }
         });
+        alert("Request declined!");
+        window.location.reload();
     }
 </script>
