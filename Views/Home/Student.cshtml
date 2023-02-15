@@ -38,7 +38,7 @@
             <!-- Dropdown items -->
             <ul class="dropdown-menu">
                 <li id="selector-1"><a class="dropdown-item">NEF3002: Applied Project</a></li>
-                <li id="selector-2"><a class="dropdown-item">NIT3112: Advance Web Development</a></li>
+                <li id="selector-2"><a class="dropdown-item">NIT3112: Advanced Web Development</a></li>
                 <li id="selector-3"><a class="dropdown-item">NIT3114: Business System Development</a></li>
                 <li id="selector-4"><a class="dropdown-item">NIT3171: ICT Business Analytics and Data Visualization</a></li>
             </ul>
@@ -80,7 +80,7 @@
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -113,11 +113,11 @@
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    @if(item.IsValuable == true)
+                    @if (item.IsValuable == true)
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -150,11 +150,11 @@
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    @if(item.IsValuable == true)
+                    @if (item.IsValuable == true)
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -187,11 +187,11 @@
                     </div>
                     <!--div class="form-group"></div-->
                     <!--button-->
-                    @if(item.IsValuable == true)
+                    @if (item.IsValuable == true)
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -233,7 +233,7 @@
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -270,7 +270,7 @@
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -307,7 +307,7 @@
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -344,7 +344,7 @@
                     {
                         <div class="element-button col red-back">
                             <div class="centerbox">
-                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
                             </div>
                         </div>
                     }
@@ -449,6 +449,15 @@ $(function () {
                 localStorage.setItem("resourceId"+count, id);
                 isSet = true;
             }
+        }
+    }
+
+    function LockValuables(ResourceId, UnitId){
+        if(localStorage.getItem("lockValuables") == "true"){
+            alert("Only one valuable resource can be requested at a time!");
+        } else {
+            RequestSend(ResourceId, UnitId);
+            localStorage.setItem("lockValuables", "true");
         }
     }
 

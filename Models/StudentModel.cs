@@ -8,10 +8,10 @@ namespace Assignment2.Models
         public string? UserId { get; set; }
 
         [MaxLength(150)]
-        [Display(Name = "Course")]
+        [Display(Name = "Course ID")]
         [DataType(DataType.Text)]
         [Required]
-        public string? Course { get; set; }
+        public string? CourseId { get; set; }
 
         public UserModel? User { get; set; }
     }
