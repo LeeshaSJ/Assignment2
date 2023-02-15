@@ -48,11 +48,12 @@ namespace Assignment2.Controllers
                 {
                     return RedirectToAction("Staff", "Home");
                 }
+                TempData["msg"] = "Login Successful!";
             }
             else
             {
-                TempData["msg"] = "Admin id or Password is wrong.!";
-                return RedirectToAction("Login", "Home");
+                ViewData["navbarVisibility"] = "index";
+                TempData["msg"] = "Incorrect username or password!";
             }
             return View();
         }
