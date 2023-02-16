@@ -137,27 +137,33 @@ namespace Assignment2.Controllers
         [Route("Home/Allocate")]
         public async Task<IActionResult> Allocate([FromBody] ResourceAllocationModel allocation)
         {
-            try
+            if (User == null)
             {
-                if (User != null)
-                {
-                    AllocationModel allocationModel = new AllocationModel();
-                    //allocationModel.AllocationDate = allocation.AllocationDate;
-                    //allocationModel.ReturnDate = allocation.ReturnDate;
-                    allocationModel.StudentId = allocation.StudentId;
-                    allocationModel.ResourceId = allocation.ResourceId;
-
-                    _context.Allocation.Add(allocationModel);
-                    await _context.SaveChangesAsync();
-                    return Ok("Success");
-                }
-            }
-            catch (Exception e)
-            {
-                return Error();
+                return Unauthorized();
             }
 
-            return BadRequest();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            AllocationModel allocationModel = new AllocationModel();
+            allocationModel.AllocationDate = DateTime.Now.Date;
+            allocationModel.ReturnDate = DateTime.Now.Date.AddDays(7);
+            allocationModel.StudentId = allocation.StudentId;
+            allocationModel.ResourceId = allocation.ResourceId;
+
+            _context.Allocation.Add(allocationModel);
+            await _context.SaveChangesAsync();
+
+            return Ok("Allocation successful");
+        }
+
+        [HttpGet]
+        public IActionResult GetAllocations(string resourceId)
+        {
+            var data = _context.Allocation.FirstOrDefault(a => a.ResourceId == resourceId);
+            return Json(data);
         }
 
         public IActionResult Staff()
@@ -169,11 +175,6 @@ namespace Assignment2.Controllers
 
             return View();
         }
-
-        /*public IActionResult MyRequests()
-        {
-            return View();
-        }*/
 
         public async Task<IActionResult> MyRequests()
         {

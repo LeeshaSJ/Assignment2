@@ -37,6 +37,9 @@
                             {
                                 <p class="element-request-msg">Status: Declined</p>
                             }
+                            <p id="allocation-date"></p>
+                            <p id="return-date"></p>
+                            <button id="btn-get-allocations" onclick="getAllocations('@item.ResourceId')">Get Dates</button>
                         </div>
                     </div>
                 }
@@ -66,3 +69,29 @@
         </div-->
     </div>
 </div>
+
+<script type="text/javascript">
+    function getAllocations(resourceId) {
+        var resId = resourceId;
+        $.ajax({
+            url: '/Home/GetAllocations',
+            type: 'GET',
+            data: { resourceId: resId },
+            success: function (data) {
+                // log received data
+                console.log(data);
+                // split dates to omit time
+                var allocationDate = data.allocationDate.split("T");
+                var returnDate = data.returnDate.split("T");
+                // Display dates
+                $(this).parent('div').find('#allocation-date').text("Allocation date: " + allocationDate); // Update the content of the element with the retrieved data
+                $(this).parent('div').find('#return-date').text("Return date: " + returnDate);
+                //
+                console.log($(this).parent().find('.element-name').text());
+            },
+            error: function (xhr, status, error) {
+                console.log(error); // Handle any errors here
+            }
+        });
+    }
+</script>

@@ -4,7 +4,7 @@ namespace Assignment2.Models
     public class AllocationModel
     {
         [Key]
-        public string? AllocationId { get; set; }
+        public int AllocationId { get; set; }
 
         [MaxLength(150)]
         [Display(Name = "Allocation Date")]
