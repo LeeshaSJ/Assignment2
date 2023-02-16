@@ -11,6 +11,15 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="~/js/student.js"></script>
+
+<div id="student-info">
+        <p class="user-info-label">Assessment name: &nbsp; <span class="user-info-value" id="assessment-name">Assessment 3 – Project</span></p>
+        <p class="user-info-label">Student name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-name">E J K P L S Jayasekara</span></p>
+        <p class="user-info-label">Student ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-id">4662585</span></p>
+        <p class="user-info-label">Course: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
+        <p class="user-info-label">Location(Campus): <span class="user-info-value" id="location-name">NSBM Green University, Sri Lanka</span></p>
+</div>
+
 <div id="user-info">
     @if (ViewData["sessionUserId"] != null)
     {
