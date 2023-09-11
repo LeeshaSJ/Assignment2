@@ -1,14 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Staff";
 }
-<link rel="stylesheet" href="~/css/student.css" />
-<link rel="stylesheet" href="~/css/staff.css" />
+<link rel="stylesheet" href="~/css/student_staff.css" />
+<style>
+    #staff {
+        background-color: lightskyblue;
+        border-radius: 25px;
+    }
+</style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="~/js/student.js"></script>
-<div id="stf-info">
-    <p class="stf-info-label">Staff user name: <span class="stf-info-value" id="stf-name"></span></p>
-    <p class="stf-info-label">Staff user ID: <span class="stf-info-value" id="stf-id"></span></p>
-    <p class="stf-info-label">Department: <span class="stf-info-value" id="stf-dept"></span></p>
+
+<div id="student-info">
+        <p class="user-info-label">Assessment name: &nbsp; <span class="user-info-value" id="assessment-name">Assessment 3 – Project</span></p>
+        <p class="user-info-label">Student name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-name">E J K P L S Jayasekara</span></p>
+        <p class="user-info-label">Student ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-id">4662585</span></p>
+        <p class="user-info-label">Course: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
+        <p class="user-info-label">Location(Campus): <span class="user-info-value" id="location-name">NSBM Green University, Sri Lanka</span></p>
+</div>
+
+<div id="user-info">
+    @if (ViewData["sessionUserId"] != null)
+    {
+        var userId = ViewData["sessionUserId"];
+        var userName = ViewData["sessionUserName"];
+        <p class="user-info-label">Staff user name: <span class="user-info-value" id="user-name">@userName</span></p>
+        <p class="user-info-label">Staff user ID: &nbsp;&nbsp;&nbsp;&nbsp; <span class="user-info-value" id="user-id">@userId</span></p>
+        <p class="user-info-label">Department: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-dept">Department of Information & System Science</span></p>
+    }
 </div>
 <div id="content">
     <div class="clearfix">
@@ -34,7 +54,7 @@
         </div>
     </div>
 
-    <div id="books" class="tab-content container">
+    <div id="books" class="container">
         <!---------------------------------------------->
         <div class="content-element applied-project row">
             <!--image-->

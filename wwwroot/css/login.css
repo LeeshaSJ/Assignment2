@@ -2,3 +2,12 @@
     background-image: url("../images/vu_login_back.jpg");
     background-size: cover;
 }
+
+#login {
+    background-color: lightskyblue;
+    border-radius: 25px;
+}
+
+#btn-submit {
+    width: 100%;
+}

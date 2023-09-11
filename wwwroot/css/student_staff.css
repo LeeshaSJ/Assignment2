@@ -1,0 +1,141 @@
+﻿/*media queries change css dynamically when the window size changes*/
+@media (max-width: 768px) {
+    .element-image {
+        height: 100%;
+        width: 180vw;
+        float: left;
+        border-right: 3px groove lightskyblue;
+    }
+}
+
+#user-info {
+    border-top: #ccc 5px solid;
+    border-right: #ccc 5px solid;
+    border-bottom: #777 5px solid;
+    border-left: #777 5px solid;
+    border-radius: 50px;
+    padding: 30px 50px 30px 50px;
+    margin-bottom: 20px;
+}
+#student-info {
+    border-top: #db7171 5px solid;
+    border-right: #db7171 5px solid;
+    border-bottom: #b91515 5px solid;
+    border-left: #b91515 5px solid;
+    border-radius: 50px;
+    padding: 30px 50px 30px 50px;
+    margin-bottom: 20px;
+}
+.user-info-label {
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.user-info-value {
+    font-style: normal;
+    font-weight: normal;
+}
+
+#btn-dropdown {
+    width: 34%;
+}
+
+.dropdown {
+    width: 50%;
+    float: left;
+}
+
+#dropdown-unit {
+    margin-right: 2px;
+    width: 100%;
+}
+
+#dropdown-category {
+    margin-left: 2px;
+    width: 100%;
+}
+
+.dropdown-menu {
+    width: 100%;
+    font-family: 'Inconsolata', monospace;
+}
+
+.dropdown-item {
+    font-weight: bold;
+}
+
+.content-element {
+    border: groove;
+    border-radius: 5px;
+    border-style: ridge;
+    border-color: #0000a8;
+    border-width: 7px;
+    margin: 5px 0px 5px 0px;
+    height: 270px;
+    width: 100%;
+    padding: 2px;
+}
+
+.element-image {
+    height: 100%;
+    max-width: 270px;
+    float: left;
+    border-right: 3px groove lightskyblue;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.element-name {
+    font-weight: bold;
+    font-size: calc(5px + 2vw);
+}
+
+.element-text {
+    padding: 20px;
+    height: 100%;
+    float: left;
+    font-size: calc(5px + 1vw);
+}
+
+.element-request-msg {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.element-button {
+    max-width: 230px;
+    float: left;
+    background-color: #afe9ff;
+}
+
+.red-back {
+    background-color: #ff5e5e;
+}
+
+.btn-request {
+    background-color: white;
+    color: black;
+    border: 2px solid lightskyblue;
+    border-radius: 8px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    height: 70px;
+    width: 100%;
+    font-size: 2em;
+}
+
+.btn-request:hover {
+    background-color: #0000a8;
+    color: white;
+}
+
+.accept {
+    width: 100%;
+}
+
+.decline {
+    width: 100%;
+}

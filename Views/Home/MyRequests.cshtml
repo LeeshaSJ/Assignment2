@@ -1,25 +1,80 @@
-﻿
+﻿@model IEnumerable<Assignment2.Models.RequestModel>
+
 @{
     ViewData["Title"] = "MyRequests";
 }
-<link rel="stylesheet" href="~/css/student.css"/>
+<link rel="stylesheet" href="~/css/student_staff.css"/>
+<style>
+    #myRequest{
+        background-color: lightskyblue;
+        border-radius: 25px;
+    }
+</style>
 
-<div id="requested-page">
-        <div class="content-element">
-            <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%"/></div>
-            <div class="element-text">
-                <p class="element-name">ASP.NET Book</p>
-                <p class="element-description">The complete reference to ASP.NET...</p>
-                <p class="element-request-msg">Requested</p>
-            </div>
-        </div>
+<div id="content">
+    <div class="tab-content container">
+        @foreach (var item in Model)
+        {
+            if (ViewData["sessionUserId"] != null)
+            {
+                var userId = ViewData["sessionUserId"];
+                if (String.Equals(item.StudentId, userId))
+                {
+                    <div class="content-element row">
+                        <div class="element-image col"><img src="~/images/@item.Resource.ImagePath" alt="requested resource image" height="100%" /></div>
+                        <div class="element-text col">
+                            <p class="element-name">@item.Resource.ResourceName</p>
+                            <p class="element-description">@item.Resource.ResourceDescription</p>
+                            @if (@item.IsApproval == null)
+                            {
+                                <p class="element-request-msg">Status: Pending</p>
+                            }
+                            else if (@item.IsApproval == true)
+                            {
+                                <p class="element-request-msg">Status: Granted</p>
+                            }
+                            else
+                            {
+                                <p class="element-request-msg">Status: Declined</p>
+                            }
+                            <p id="allocation-date"></p>
+                            <p id="return-date"></p>
+                            <button id="btn-get-allocations" onclick="getAllocations('@item.ResourceId')">Get Dates</button>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Error</p>
+            }
 
-        <div class="content-element">
-            <div class="element-image"><img src="~/images/eBusiness.jpg" alt="requested resource image" height="100%" /></div>
-            <div class="element-text">
-                <p class="element-name">High performance laptop</p>
-                <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
-                <p class="element-request-msg" style="background-color: green;">Granted</p>
-            </div>
-        </div>
+        }
+    </div>
 </div>
+
+<script type="text/javascript">
+    function getAllocations(resourceId) {
+        var resId = resourceId;
+        $.ajax({
+            url: '/Home/GetAllocations',
+            type: 'GET',
+            data: { resourceId: resId },
+            success: function (data) {
+                // log received data
+                console.log(data);
+                // split dates to omit time
+                var allocationDate = data.allocationDate.split("T");
+                var returnDate = data.returnDate.split("T");
+                // Display dates
+                $(this).parent('div').find('#allocation-date').text("Allocation date: " + allocationDate); // Update the content of the element with the retrieved data
+                $(this).parent('div').find('#return-date').text("Return date: " + returnDate);
+                //
+                console.log($(this).parent().find('.element-name').text());
+            },
+            error: function (xhr, status, error) {
+                console.log(error); // Handle any errors here
+            }
+        });
+    }
+</script>

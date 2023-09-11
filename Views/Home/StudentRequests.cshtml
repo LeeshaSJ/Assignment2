@@ -1,30 +1,88 @@
-﻿
+﻿@model List<Tuple<TeacherModel, RequestModel>>
+
 @{
     ViewData["Title"] = "StudentRequests";
 }
 
-<link rel="stylesheet" href="~/css/student.css" />
+<link rel="stylesheet" href="~/css/student_staff.css" />
+<style>
+    #stdRequest {
+        background-color: lightskyblue;
+        border-radius: 25px;
+    }
+</style>
 
-<div id="requested-page">
-    <div class="content-element">
-        <div class="element-image"><img src="~/images/reference_1.jpg" alt="requested resource image" height="100%" /></div>
-        <div class="element-text">
-            <p class="element-name">ASP.NET Book</p>
-            <p class="element-description">The complete reference to ASP.NET...</p>
-            <p class="element-requested-by">Requested by: </p>
-            <button>Accept</button>
-            <button>Decline</button>
-        </div>
-    </div>
-
-    <div class="content-element">
-        <div class="element-image"><img src="~/images/eBusiness.jpg" alt="requested resource image" height="100%" /></div>
-        <div class="element-text">
-            <p class="element-name">High performance laptop</p>
-            <p class="element-description">intel i5 - 10th gen - 12GB RAM...</p>
-            <p class="element-requested-by">Requested by: </p>
-            <button>Accept</button>
-            <button>Decline</button>
-        </div>
+<div id="content">
+    <div class="tab-content container">
+        @foreach (var item in Model)
+        {
+            if (ViewData["sessionUserId"] != null)
+            {
+                var userId = ViewData["sessionUserId"];
+                if (String.Equals(item.Item1.UserId, userId))
+                {
+                    var unit = item.Item1.Units;
+                    if (String.Equals(item.Item2.UnitId, unit))
+                    {
+                        <div class="content-element row">
+                            <div class="element-image col"><img src="~/images/@item.Item2.Resource.ImagePath" alt="requested resource image" height="100%" /></div>
+                            <div class="element-text col">
+                                <p class="element-name">@item.Item2.Resource.ResourceName</p>
+                                <p class="element-description">@item.Item2.Resource.ResourceDescription</p>
+                                <p class="element-requested-by">Requested by: @item.Item2.StudentId</p>
+                                <button class="accept" onclick="AcceptRequest('@item.Item2.RequestId','@item.Item2.StudentId','@item.Item2.ResourceId')">Accept</button>
+                                <button class="decline" onclick="DeclineRequest('@item.Item2.RequestId')">Decline</button>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        }
     </div>
 </div>
+
+<script type="text/javascript">
+    function AcceptRequest(reqId, studId, resId) {
+        var pdata = JSON.stringify({ requestId: reqId, isApproval: true });
+        $.ajax({
+            type: "POST",
+            url: '/Home/RequestApproval',
+            contentType: "application/json",
+            dataType: "json",
+            data: pdata,
+            success: function(msg) {
+                alert("Request accepted!");
+            }
+        });
+        var allocationData = JSON.stringify({ studentId: studId, resourceId: resId });
+        $.ajax({
+            type: "POST",
+            url: '/Home/Allocate',
+            contentType: "application/json",
+            dataType: "json",
+            data: allocationData,
+            success: function (msg) {
+                // Allocation success!
+            }
+        });
+
+        alert("Request accepted!");
+        window.location.reload();
+    }
+
+    function DeclineRequest(id) {
+       var pdata = JSON.stringify({ requestId: id, isApproval: false });
+        $.ajax({
+            type: "POST",
+            url: '/Home/RequestApproval',
+            contentType: "application/json",
+            dataType: "json",
+            data: pdata,
+            success: function(msg) {
+                alert("Request declined!");
+            }
+        });
+        alert("Request declined!");
+        window.location.reload();
+    }
+</script>

@@ -1,27 +1,58 @@
-﻿@{
+﻿@model IEnumerable<Assignment2.Models.ResourcesModel>
+
+@{
     ViewData["Title"] = "Student";
 }
-<link rel="stylesheet" href="~/css/student.css" />
+<!--CSS links-->
+<link rel="stylesheet" href="~/css/student_staff.css" />
+ <!-- Change navbar highlighted item based on the page you are in -->
+<style>
+    #student {
+        background-color: lightskyblue;
+        border-radius: 25px;
+    }
+</style>
+<!--JS links-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="~/js/student.js"></script>
-<div id="std-info">
-    <p class="std-info-label">Student name: <span class="std-info-value" id="std-name"></span></p>
-    <p class="std-info-label">Student ID: <span class="std-info-value" id="std-id"></span></p>
-    <p class="std-info-label">Course: <span class="std-info-value" id="std-course"></span></p>
+
+<!-- Student information display -->
+<div id="student-info">
+    
+        <p class="user-info-label">Assessment name: &nbsp; <span class="user-info-value" id="assessment-name">Assessment 3 – Project</span></p>
+        <p class="user-info-label">Student name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-name">E J K P L S Jayasekara</span></p>
+        <p class="user-info-label">Student ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-id">4662585</span></p>
+        <p class="user-info-label">Course: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
+        <p class="user-info-label">Location(Campus): <span class="user-info-value" id="location-name">NSBM Green University, Sri Lanka</span></p>
 </div>
+
+<div id="user-info">
+    @if (ViewData["sessionUserId"] != null)
+    {
+        var userId = ViewData["sessionUserId"];
+        var userName = ViewData["sessionUserName"];
+        <p class="user-info-label">Student name: <span class="user-info-value" id="user-name">@userName</span></p>
+        <p class="user-info-label">Student ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-id">@userId</span></p>
+        <p class="user-info-label">Course: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="user-info-value" id="user-course">BSc. Web & Mobile Application Development</span></p>
+    }
+</div>
+
+<!-- Main content -->
 <div id="content">
     <div class="clearfix">
+        <!-- Unit dropdown menu -->
         <div class="dropdown">
             <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-unit">
-                Select Unit
+                Select Unit 
             </button>
+            <!-- Dropdown items -->
             <ul class="dropdown-menu">
-                <li id="selector-1"><a class="dropdown-item">Applied Project</a></li>
-                <li id="selector-2"><a class="dropdown-item">Advance Web Development</a></li>
-                <li id="selector-3"><a class="dropdown-item">Online Business System Development</a></li>
-                <li id="selector-4"><a class="dropdown-item">ICT Business Analytics and Data Visualization</a></li>
+                <li id="selector-1"><a class="dropdown-item">NEF3002: Applied Project</a></li>
+                <li id="selector-2"><a class="dropdown-item">NIT3112: Advanced Web Development</a></li>
+                <li id="selector-3"><a class="dropdown-item">NIT3114: Business System Development</a></li>
+                <li id="selector-4"><a class="dropdown-item">NIT3171: ICT Business Analytics and Data Visualization</a></li>
             </ul>
         </div>
+        <!-- Category dropdown menu -->
         <div class="dropdown" id="dd-cat">
             <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-category">
                 Select Category
@@ -32,92 +63,273 @@
             </ul>
         </div>
     </div>
-    
-    <div id="books" class="tab-content container">
-        <!---------------------------------------------->
-        <div class="content-element applied-project row">
-            <!--image-->
-            <div class="element-image col"><img src="~/images/python.jpg" alt="requested resource image"/></div>
-            <!--text-->
-            <div class="element-text col">
-                <p class="element-name">Python Programming for Beginners</p>
-                <p class="element-description">The complete reference to python programming.</p>      
-            </div>
-            <!--button-->
-            <div class="element-button col">
-                <div class="centerbox">
-                    <button class="btn-request">Request</button>
-                </div>
-            </div>
-        </div>
-        <!---------------------------------------------->
-        <div class="content-element advance-web-dev applied-project row">
-            <!--image-->
-            <div class="element-image col"><img src="~/images/eBusiness.jpg" alt="requested resource image" /></div>
-            <!--text-->
-            <div class="element-text col">
-                <p class="element-name">Information Systems & E-Business</p>
-                <p class="element-description">The complete reference to information systems & E-Business.</p>
-            </div>
-            <!--button-->
-            <div class="element-button col">
-                <div class="centerbox">
-                    <button class="btn-request">Request</button>
-                </div>
-            </div>
-        </div>
-        <!---------------------------------------------->
-        <div class="content-element online-business-sys applied-project row">
-            <!--image-->
-            <div class="element-image col"><img src="~/images/reference_1.jpg" alt="requested resource image" /></div>
-            <!--text-->
-            <div class="element-text col">
-                <p class="element-name">ASP.NET Book</p>
-                <p class="element-description">The complete reference to ASP.NET..</p>
-            </div>
-            <!--button-->
-            <div class="element-button col">
-                <div class="centerbox">
-                    <button class="btn-request">Request</button>
-                </div>
-            </div>
-        </div>
-        <!---------------------------------------------->
-        <div class="content-element ict-bus-analytics row">
-            <!--image-->
-            <div class="element-image col"><img src="~/images/Data_V1.png" alt="requested resource image" /></div>
-            <!--text-->
-            <div class="element-text col">
-                <p class="element-name">Fundamentals of Data Visualization</p>
-                <p class="element-description">The complete reference to data visualization...</p>
-            </div>
-            <!--button-->
-            <div class="element-button col">
-                <div class="centerbox">
-                    <button class="btn-request">Request</button>
-                </div>
-            </div>
-        </div>
+    <div id="books" class="container">
 
+        @foreach (var item in Model)
+        {
+            if (item.UnitId == "NEF3002" && item.ResourceType == "Book")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element applied-project row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>  
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            if (item.UnitId == "NIT3112" && item.ResourceType == "Book")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element advance-web-dev row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p> 
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if (item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            if (item.UnitId == "NIT3114" && item.ResourceType == "Book")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element online-business-sys row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>    
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if (item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            if (item.UnitId == "NIT3171" && item.ResourceType == "Book")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element ict-bus-analytics row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>  
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if (item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        }
     </div>
+    <div id="devices" class="container">
 
-
-
-    <div id="devices" class="tab-content container">
-        <!---------------------------------------------->
-        <div class="content-element applied-project row">
-            <!--image-->
-            <div class="element-image col"><img src="~/images/Apple1.jpg" alt="requested resource image" height="30%" /></div>
-            <!--text-->
-            <div class="element-text col">
-                <p class="element-name">High performance Computer</p>
-                <p class="element-description">macOS Monterey (version 12.2.1) - 8-core...</p>
-            </div>
-            <!--button-->
-            <div class="element-button col">
-                <div class="centerbox">
-                    <button class="btn-request">Request</button>
+        @foreach (var item in Model)
+        {
+            if (item.UnitId == "NEF3002" && item.ResourceType == "Device")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element applied-project row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>   
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
                 </div>
+            }
+
+            if (item.UnitId == "NIT3112" && item.ResourceType == "Device")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element advance-web-dev row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>   
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            if (item.UnitId == "NIT3114" && item.ResourceType == "Device")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element online-business-sys row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>  
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+<<<<<<< HEAD
             </div>
         </div>
         <!---------------------------------------------->
@@ -168,6 +380,153 @@
                 </div>
             </div>
         </div>
+=======
+            }
+>>>>>>> M
 
+            if (item.UnitId == "NIT3171" && item.ResourceType == "Device")
+            {
+                <!-- Each element in the grid has a separate table -->
+                <!---------------------------------------------->
+                <div class="content-element ict-bus-analytics row">
+                    <!--image-->
+                    <div class="element-image col"><img src="~/images/@item.ImagePath" alt="requested resource image"/></div>
+                    <!--text-->
+                    <div class="element-text col">
+                        <p class="element-name">@item.ResourceName</p>
+                        <p class="element-description">@item.ResourceDescription</p>   
+                        @if(item.IsValuable == true)
+                        {
+                            <p>Valuable resource</p>
+                        }
+                    </div>
+                    <!--div class="form-group"></div-->
+                    <!--button-->
+                    @if(item.IsValuable == true)
+                    {
+                        <div class="element-button col red-back">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="LockValuables('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                    else 
+                    {
+                        <div class="element-button col">
+                            <div class="centerbox">
+                                <button class="btn-request" onclick="RequestSend('@item.ResourceId','@item.UnitId')">Request</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        }
     </div>
 </div>
+
+<script type="text/javascript">
+
+// Below is a jQuery page-on-load function
+$(function () {
+    // When selecting one of the items from the dropdown menu, below click functions will get triggered
+    $("#selector-1").click(function () {
+        // When selecting applied project item, all other items will disappear from the page
+        $(".advance-web-dev").hide();
+        $(".online-business-sys").hide();
+        $(".ict-bus-analytics").hide();
+        $(".applied-project").show();
+        // Change text of dropdown menu
+        $("#dropdown-unit").text("Applied Project");
+    })
+
+    $("#selector-2").click(function () {
+        $(".applied-project").hide();
+        $(".online-business-sys").hide();
+        $(".ict-bus-analytics").hide();
+        $(".advance-web-dev").show();
+        $("#dropdown-unit").text("Advance Web Development");
+    })
+
+    $("#selector-3").click(function () {
+        $(".applied-project").hide();
+        $(".advance-web-dev").hide();
+        $(".ict-bus-analytics").hide();
+        $(".online-business-sys").show();
+        $("#dropdown-unit").text("Online Business System Development");
+        
+    })
+    $("#selector-4").click(function () {
+        $(".applied-project").hide();
+        $(".advance-web-dev").hide();
+        $(".online-business-sys").hide();
+        $(".ict-bus-analytics").show();
+        $("#dropdown-unit").text("ICT Business Analytics and Data Visualization");
+    })
+   
+    $("#dropdown-books").click(function () {
+        $("#books").show();
+        $("#devices").hide();
+        $("#dropdown-category").text("Books");
+    });
+
+    $("#dropdown-devices").click(function () {
+        $("#devices").show();
+        $("#books").hide();
+        $("#dropdown-category").text("Devices");
+    });
+})
+
+    function RequestSend(id,unit) {
+
+        var isSet = false;
+        var count = 1;
+        while(!isSet)
+        {
+            var gotItem = localStorage.getItem("resourceId"+count);
+            if (gotItem != null) {
+                if (gotItem == id)
+                {
+                    alert("Already requested!");
+                    isSet = true;
+                }
+                else
+                {
+                    count++;
+                }
+            }
+            else 
+            {   
+                var pdata = JSON.stringify({ id: id, unit: unit });
+                $.ajax({
+                    type: "POST",
+                    url: '/Home/StudentItemRequest',
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: pdata,
+                    success: function(msg) {
+                        // Replace the div's content with the page method's return.
+                        alert(msg);
+                    }
+                });
+                localStorage.setItem("resourceId"+count, id);
+                isSet = true;
+            }
+        }
+    }
+
+    function LockValuables(ResourceId, UnitId){
+        if(localStorage.getItem("lockValuables") == "true"){
+            alert("Only one valuable resource can be requested at a time!");
+        } else {
+            RequestSend(ResourceId, UnitId);
+            localStorage.setItem("lockValuables", "true");
+        }
+    }
+
+    $(function(){
+        $(".btn-request").click(function() {
+            $(this).text("Requested");
+            $(this).prop("disabled",true);
+        });
+    })
+</script>

@@ -3,18 +3,20 @@
     ViewData["Title"] = "Login";
 }
 
+@model Assignment2.Models.LoginModel;
+
 <link rel="stylesheet" href="~/css/login.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="~/js/login.js"></script>
 
-<form>
+<form asp-controller="Home" asp-action="Login" method="post">
     <img src="~/images/vu_transparent_logo.png" width="100%"/>
 
     <div class="mb-3">
-        <input type="text" class="form-control" id="sid" placeholder="Student/Staff ID">
+        <input type="text" class="form-control" id="sid" name="user_id" placeholder="Student/Staff ID">
     </div>
     <div class="mb-3">
-        <input type="password" class="form-control" id="pass" placeholder="Password">
+        <input type="password" class="form-control" id="pass" name="Password" placeholder="Password">
     </div>
 
     <div class="mb-3">
@@ -26,5 +28,5 @@
 
     <button type="submit" class="btn btn-primary" id="btn-submit">Login</button>
 
-    <p id="login-message"></p>     
+    <p id="login-message" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; width: 100%; text-align: center; color: red">@TempData["msg"]</p>
 </form>
