@@ -1,0 +1,397 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Assignment2.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Assignment2.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\css\\student_staff.css",
+      "PackagePath": "staticwebassets\\css\\student_staff.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Apple1.jpg",
+      "PackagePath": "staticwebassets\\images\\Apple1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Apple2.jpg",
+      "PackagePath": "staticwebassets\\images\\Apple2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Apple5.jpg",
+      "PackagePath": "staticwebassets\\images\\Apple5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Business Information Systems.png",
+      "PackagePath": "staticwebassets\\images\\Business Information Systems.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\C#_pro.jpg",
+      "PackagePath": "staticwebassets\\images\\C#_pro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Computer.png",
+      "PackagePath": "staticwebassets\\images\\Computer.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Data_V1.png",
+      "PackagePath": "staticwebassets\\images\\Data_V1.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Dell.jpg",
+      "PackagePath": "staticwebassets\\images\\Dell.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Design for How People Think.png",
+      "PackagePath": "staticwebassets\\images\\Design for How People Think.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Desktop.png",
+      "PackagePath": "staticwebassets\\images\\Desktop.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\HPLap.png",
+      "PackagePath": "staticwebassets\\images\\HPLap.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Hands On Data Visualization.png",
+      "PackagePath": "staticwebassets\\images\\Hands On Data Visualization.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\MacBook.png",
+      "PackagePath": "staticwebassets\\images\\MacBook.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\Micro2.webp",
+      "PackagePath": "staticwebassets\\images\\Micro2.webp"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\PhpMysql.png",
+      "PackagePath": "staticwebassets\\images\\PhpMysql.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\apple4.jpg",
+      "PackagePath": "staticwebassets\\images\\apple4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\eBusiness.jpg",
+      "PackagePath": "staticwebassets\\images\\eBusiness.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\hp1-1.png",
+      "PackagePath": "staticwebassets\\images\\hp1-1.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\hp2.png",
+      "PackagePath": "staticwebassets\\images\\hp2.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\python.jpg",
+      "PackagePath": "staticwebassets\\images\\python.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\reference_1.jpg",
+      "PackagePath": "staticwebassets\\images\\reference_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\victoria.jpg",
+      "PackagePath": "staticwebassets\\images\\victoria.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\vu.jpg",
+      "PackagePath": "staticwebassets\\images\\vu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\vu_background.jpg",
+      "PackagePath": "staticwebassets\\images\\vu_background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\vu_login_back.jpg",
+      "PackagePath": "staticwebassets\\images\\vu_login_back.jpg"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\vu_logo.jfif",
+      "PackagePath": "staticwebassets\\images\\vu_logo.jfif"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\vu_logo_stacked.png",
+      "PackagePath": "staticwebassets\\images\\vu_logo_stacked.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\images\\vu_transparent_logo.png",
+      "PackagePath": "staticwebassets\\images\\vu_transparent_logo.png"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\js\\student.js",
+      "PackagePath": "staticwebassets\\js\\student.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\leesh\\OneDrive\\Desktop\\Assignment2\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Assignment2.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Assignment2.props",
+      "PackagePath": "build\\Assignment2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Assignment2.props",
+      "PackagePath": "buildMultiTargeting\\Assignment2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Assignment2.props",
+      "PackagePath": "buildTransitive\\Assignment2.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
